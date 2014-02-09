@@ -10,3 +10,4 @@ C:\Users\Elwirka\documents\visual studio 2010\Projects\PhoneApp\PhoneApp\obj\Deb
 C:\Users\Elwirka\documents\visual studio 2010\Projects\PhoneApp\PhoneApp\obj\Debug\PhoneApp.dll
 C:\Users\Elwirka\documents\visual studio 2010\Projects\PhoneApp\PhoneApp\obj\Debug\PhoneApp.pdb
 C:\Users\Elwirka\documents\visual studio 2010\Projects\PhoneApp\PhoneApp\obj\Debug\XapCacheFile.xml
+C:\Users\Elwirka\documents\visual studio 2010\Projects\PhoneApp\PhoneApp\obj\Debug\SecondPage.g.i.cs

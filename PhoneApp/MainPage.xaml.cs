@@ -29,8 +29,9 @@ namespace PhoneApp
         {
             this.Dispatcher.BeginInvoke(() =>
                                             {
-                                                Storyboard shakeAnimation = Resources["ShakeAnimation"] as Storyboard;
-                                                shakeAnimation.Begin();
+                                              //  Storyboard shakeAnimation = Resources["ShakeAnimation"] as Storyboard;
+                                               // shakeAnimation.Begin();
+                                                NavigationService.Navigate(new Uri("/SecondPage.xaml", UriKind.Relative));
                                             });
             
         }
