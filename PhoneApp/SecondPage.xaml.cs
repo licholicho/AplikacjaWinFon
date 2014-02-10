@@ -19,5 +19,15 @@ namespace PhoneApp
         {
             InitializeComponent();
         }
+
+        private void Camera_Click(object sender, RoutedEventArgs e)
+        {
+            this.Dispatcher.BeginInvoke(() =>
+            {
+                //  Storyboard shakeAnimation = Resources["ShakeAnimation"] as Storyboard;
+                // shakeAnimation.Begin();
+                NavigationService.Navigate(new Uri("/CameraPage.xaml", UriKind.Relative));
+            });
+        }
     }
 }

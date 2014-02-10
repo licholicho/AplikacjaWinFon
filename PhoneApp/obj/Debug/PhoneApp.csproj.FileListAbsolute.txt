@@ -11,3 +11,17 @@ C:\Users\Elwirka\documents\visual studio 2010\Projects\PhoneApp\PhoneApp\obj\Deb
 C:\Users\Elwirka\documents\visual studio 2010\Projects\PhoneApp\PhoneApp\obj\Debug\PhoneApp.pdb
 C:\Users\Elwirka\documents\visual studio 2010\Projects\PhoneApp\PhoneApp\obj\Debug\XapCacheFile.xml
 C:\Users\Elwirka\documents\visual studio 2010\Projects\PhoneApp\PhoneApp\obj\Debug\SecondPage.g.i.cs
+C:\Users\Kasia\Desktop\WP\AplikacjaWinFon\PhoneApp\Bin\Debug\ApplicationIcon.png
+C:\Users\Kasia\Desktop\WP\AplikacjaWinFon\PhoneApp\Bin\Debug\Background.png
+C:\Users\Kasia\Desktop\WP\AplikacjaWinFon\PhoneApp\Bin\Debug\PhoneApp.dll
+C:\Users\Kasia\Desktop\WP\AplikacjaWinFon\PhoneApp\Bin\Debug\PhoneApp.pdb
+C:\Users\Kasia\Desktop\WP\AplikacjaWinFon\PhoneApp\Bin\Debug\AppManifest.xaml
+C:\Users\Kasia\Desktop\WP\AplikacjaWinFon\PhoneApp\Bin\Debug\PhoneApp.xap
+C:\Users\Kasia\Desktop\WP\AplikacjaWinFon\PhoneApp\obj\Debug\App.g.i.cs
+C:\Users\Kasia\Desktop\WP\AplikacjaWinFon\PhoneApp\obj\Debug\MainPage.g.i.cs
+C:\Users\Kasia\Desktop\WP\AplikacjaWinFon\PhoneApp\obj\Debug\SecondPage.g.i.cs
+C:\Users\Kasia\Desktop\WP\AplikacjaWinFon\PhoneApp\obj\Debug\PhoneApp.g.resources
+C:\Users\Kasia\Desktop\WP\AplikacjaWinFon\PhoneApp\obj\Debug\PhoneApp.dll
+C:\Users\Kasia\Desktop\WP\AplikacjaWinFon\PhoneApp\obj\Debug\PhoneApp.pdb
+C:\Users\Kasia\Desktop\WP\AplikacjaWinFon\PhoneApp\obj\Debug\XapCacheFile.xml
+C:\Users\Kasia\Desktop\WP\AplikacjaWinFon\PhoneApp\obj\Debug\CameraPage.g.i.cs
