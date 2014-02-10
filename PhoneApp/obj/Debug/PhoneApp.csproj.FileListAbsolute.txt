@@ -25,3 +25,4 @@ C:\Users\Kasia\Desktop\WP\AplikacjaWinFon\PhoneApp\obj\Debug\PhoneApp.dll
 C:\Users\Kasia\Desktop\WP\AplikacjaWinFon\PhoneApp\obj\Debug\PhoneApp.pdb
 C:\Users\Kasia\Desktop\WP\AplikacjaWinFon\PhoneApp\obj\Debug\XapCacheFile.xml
 C:\Users\Kasia\Desktop\WP\AplikacjaWinFon\PhoneApp\obj\Debug\CameraPage.g.i.cs
+C:\Users\Elwirka\Documents\Visual Studio 2010\Projects\PhoneApp\PhoneApp\obj\Debug\CameraPage.g.i.cs
