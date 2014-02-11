@@ -26,7 +26,7 @@ namespace PhoneApp
             {
                 //  Storyboard shakeAnimation = Resources["ShakeAnimation"] as Storyboard;
                 // shakeAnimation.Begin();
-                NavigationService.Navigate(new Uri("/CameraPage.xaml", UriKind.Relative));
+                NavigationService.Navigate(new Uri("/ListPage.xaml", UriKind.Relative));
             });
         }
     }

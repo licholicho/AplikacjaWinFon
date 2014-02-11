@@ -20,6 +20,20 @@ namespace PhoneApp
                 DrinkIngredients = "skla",
                 DrinkDescription = "opis"
             });
+            ListDrinks.Add(new Drink
+            {
+                DrinkID = id++,
+                DrinkName = "drink3",
+                DrinkIngredients = "sklaaasf",
+                DrinkDescription = "opis"
+            });
+            ListDrinks.Add(new Drink
+            {
+                DrinkID = id++,
+                DrinkName = "drink3",
+                DrinkIngredients = "skla",
+                DrinkDescription = "opisas"
+            });
            
     
         }
