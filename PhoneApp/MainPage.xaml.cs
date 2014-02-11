@@ -35,5 +35,10 @@ namespace PhoneApp
                                             });
             
         }
+
+        private void Shake_Click(object sender, EventArgs e)
+        {
+            NavigationService.Navigate(new Uri("/AddPage.xaml", UriKind.Relative));
+        }
     }
 }
