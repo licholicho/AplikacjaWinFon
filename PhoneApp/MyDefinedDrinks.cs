@@ -23,15 +23,15 @@ namespace PhoneApp
             ListDrinks.Add(new Drink
             {
                 DrinkID = id++,
-                DrinkName = "drink3",
-                DrinkIngredients = "sklaaasf",
+                DrinkName = "drink2",
+                DrinkIngredients = "woda",
                 DrinkDescription = "opis"
             });
             ListDrinks.Add(new Drink
             {
                 DrinkID = id++,
                 DrinkName = "drink3",
-                DrinkIngredients = "skla",
+                DrinkIngredients = "ogórek, woda",
                 DrinkDescription = "opisas"
             });
            

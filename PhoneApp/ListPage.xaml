@@ -25,10 +25,9 @@
     <!--Sample code showing usage of ApplicationBar-->
     <phone:PhoneApplicationPage.ApplicationBar>
         <shell:ApplicationBar IsVisible="True" IsMenuEnabled="True" Opacity="0.9" Mode="Minimized">
-            <shell:ApplicationBarIconButton IconUri="/Icons/add.png" Text="add" Click="AddEvent_Click"/>
-            <shell:ApplicationBarIconButton IconUri="/Icons/edit.png" Text="edit" Click="EditEvent_Click"/>
-            <shell:ApplicationBarIconButton IconUri="/Icons/delete.png" Text="delete" Click="DeleteEvent_Click"/>
-            <shell:ApplicationBarIconButton IconUri="/Icons/refresh.png" Text="delete" Click="Refresh_Click"/>
+            <shell:ApplicationBarIconButton IconUri="/Images/add.png" Text="add" Click="AddEvent_Click"/>
+            <shell:ApplicationBarIconButton IconUri="/Images/edit.png" Text="edit" Click="EditEvent_Click"/>
+            <shell:ApplicationBarIconButton IconUri="/Images/delete.png" Text="delete" Click="DeleteEvent_Click"/>
             <shell:ApplicationBar.MenuItems>
                 <!--<shell:ApplicationBarMenuItem Text="Choose my position" Click="chooseMyPosition_click"/>
                 <shell:ApplicationBarMenuItem Text="Locate Me" Click="locateMe_click"/>

@@ -19,13 +19,13 @@ namespace PhoneApp
       DatabaseClass databaseClass = new DatabaseClass();
         int selectedDrinkID = -1;
         List<Drink> eventsListPerDay;
-        Grid lay;
+       // Grid lay;
       //  Pivot pivotControl;
 
         public ListPage()
         {
-            //InitializeComponent();
-            init();
+            InitializeComponent();
+           // init();
             ShowEvents();
         }
 
@@ -34,10 +34,11 @@ namespace PhoneApp
             IList<Drink> drinkList = databaseClass.GetDrinksList();
 
             //eventsListPerDay = TransformToEventsListPerDay(eventsList);
-            IEnumerable<Drink> queryListDrinks = drinkList.OrderBy(evt => evt.DrinkName);
+            IEnumerable<Drink> queryListDrinks = drinkList;//.OrderBy(evt => evt.DrinkName);
             eventsListPerDay = queryListDrinks.ToList();
 
-            String name = "drink3";
+            String name = "woda";
+           
 
             //create panoramaItem and the ListBox
             List<ListBox> Listlistbox = new List<ListBox>();
@@ -56,7 +57,7 @@ namespace PhoneApp
             {
                 //look for events of today from EventsList
                 Drink evnt = eventsListPerDay[i];
-
+                System.Diagnostics.Debug.WriteLine("dlu: "+eventsListPerDay.Count+" "+evnt.DrinkName+" "+evnt.DrinkID);
                 TextBlock textBlockHour = new TextBlock();
                 textBlockHour.Text = evnt.DrinkName;
                 textBlockHour.Foreground = new SolidColorBrush(Colors.Magenta);
@@ -73,7 +74,7 @@ namespace PhoneApp
                 stackPanel1.Children.Add(textBlockNameAndPlace);
 
                 Button button = new Button();
-                button.Background = new SolidColorBrush(Colors.Red);
+                button.Background = new SolidColorBrush(Colors.Orange);
                 button.Height = 100;
                 button.Width = 90;
                 button.BorderThickness = new Thickness(0, 0, 0, 0);
@@ -86,12 +87,16 @@ namespace PhoneApp
                 stackPanel2.Children.Add(button);
                 stackPanel2.Children.Add(stackPanel1);
 
-                if (evnt.DrinkName == name)
+                System.Diagnostics.Debug.WriteLine(evnt.DrinkName);
+
+                if (evnt.DrinkIngredients.Contains(name))
                 {
+                    System.Diagnostics.Debug.WriteLine("dziaua " +listboxindex+ " "+Listlistbox.Count);
                     Listlistbox[listboxindex].Items.Add(stackPanel2);
+                    
                 }
 
-                else
+              /*  else
                 {
                     listboxindex++;
                     name = eventsListPerDay[i].DrinkName;
@@ -103,7 +108,7 @@ namespace PhoneApp
                     Listpivotitem[listboxindex].Content = Listlistbox[listboxindex];
 
                     pivotControl.Items.Add(Listpivotitem[listboxindex]);
-                }
+                }*/
             }
         }
 
@@ -218,10 +223,5 @@ namespace PhoneApp
             }*/
         }
 
-        private void init() {
-            System.Windows.Application.LoadComponent(this, new System.Uri("/PhoneApp;component/ListPage.xaml", System.UriKind.Relative));
-            lay = ((System.Windows.Controls.Grid)(this.FindName("LayoutRoot")));
-            pivotControl = ((Microsoft.Phone.Controls.Pivot)(this.FindName("pivotControl")));
-        }
     }
 }
