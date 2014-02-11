@@ -43,9 +43,10 @@ namespace PhoneApp
             LastEventIndex = 0;
             try
             {
-                foreach (Drink event1 in ListDrinks)
+                foreach (Drink drink in ListDrinks)
                 {
-                    DrinksDB.Drinks.InsertOnSubmit(event1);
+                    DrinksDB.Drinks.InsertOnSubmit(drink);
+                   
                     DrinksDB.SubmitChanges();
                     LastEventIndex++;
                 }
@@ -68,7 +69,22 @@ namespace PhoneApp
             }
             catch (Exception exc) { return null; }
         }
-
+/*
+        public IList<Ingredient> GetIngredientsList()
+        {
+            try
+            {
+                // Fetching data from local database
+                IList<Ingredient> IngredientsList = null;
+                {
+                    IQueryable<Ingredient> EmpQuery = from Evnt in DrinksDB.Ingredients select Evnt;
+                    IngredientsList = EmpQuery.ToList();
+                }
+                return IngredientsList;
+            }
+            catch (Exception exc) { return null; }
+        }
+        */
         public bool AddDrink(Drink drink)
         {
 
@@ -85,6 +101,22 @@ namespace PhoneApp
             catch (Exception exc) { return false; }
         }
 
+       /* public bool AddIngredient(Ingredient i)
+        {
+
+            i.IngredientID = LastEventIndex + 1; //give it the biggest ID
+
+            //evnt.EventID = EventsDB.Events.Last().EventID + 1; 
+            try
+            {
+                DrinksDB.Drinks.InsertOnSubmit(drink);
+                DrinksDB.SubmitChanges();
+                LastEventIndex++;
+                return true;
+            }
+            catch (Exception exc) { return false; }
+        }
+        */
         public bool EditDrink(Drink evnt)
         {
             try

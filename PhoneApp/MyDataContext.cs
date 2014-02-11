@@ -15,5 +15,13 @@ namespace PhoneApp
                 return this.GetTable<Drink>();
             }
         }
+/*
+        public Table<Ingredient> Ingredients
+        {
+            get
+            {
+                return this.GetTable<Ingredient>();
+            }
+        }*/
     }
 }

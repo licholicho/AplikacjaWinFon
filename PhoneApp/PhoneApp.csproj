@@ -69,6 +69,7 @@
     </Compile>
     <Compile Include="DatabaseClass.cs" />
     <Compile Include="Drink.cs" />
+    <Compile Include="Ingredient.cs" />
     <Compile Include="MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
