@@ -5,6 +5,7 @@
     xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
     xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:toolkit="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone.Controls.Toolkit"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     FontFamily="{StaticResource PhoneFontFamilyNormal}"
     FontSize="{StaticResource PhoneFontSizeNormal}"
@@ -33,8 +34,30 @@
 
         <!--ContentPanel - place additional content here-->
         <Grid x:Name="ContentGrid" Grid.Row="1">
-        	<Ellipse x:Name="ellipse" Fill="White"  Stroke="Black"/>
+        	
         </Grid>
+
+        <ListBox>
+            <!-- set its ItemsPanel to be a WrapPanel -->
+            <ListBox.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <toolkit:WrapPanel />
+                </ItemsPanelTemplate>
+            </ListBox.ItemsPanel>
+
+            <ListBoxItem/>
+            <ListBoxItem/>
+            <ListBoxItem/>
+            <toolkit:HubTile Height="173" Title="Mix" Message="Find by ingredients!" 
+                             Source="Images/blender.jpg" Margin="50,160,0,0"
+                             />
+            <toolkit:HubTile Title="Add" Message="Add Something New!"
+                             Source="Images/adddrink.jpg" Margin="50,160,0,0"
+                             Background="OrangeRed"/>
+            <toolkit:HubTile Title="Find" Message="Get the whole list!"
+                             Source="Images/finddrink.jpg" Margin="50,50,0,0"
+                             Background="LimeGreen"/>
+        </ListBox>
     </Grid>
 
     <phone:PhoneApplicationPage.ApplicationBar>

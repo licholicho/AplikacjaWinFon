@@ -43,3 +43,4 @@ C:\Users\Kasia\Desktop\WP\AplikacjaWinFon\PhoneApp\Bin\Debug\Microsoft.Phone.Con
 C:\Users\Kasia\Desktop\WP\AplikacjaWinFon\PhoneApp\Bin\Debug\Microsoft.Phone.Controls.xml
 C:\Users\Kasia\Desktop\WP\AplikacjaWinFon\PhoneApp\Bin\Debug\Images\delete.png
 C:\Users\Kasia\Desktop\WP\AplikacjaWinFon\PhoneApp\Bin\Debug\Images\edit.png
+C:\Users\Kasia\Desktop\WP\AplikacjaWinFon\PhoneApp\obj\Debug\FindPage.g.i.cs

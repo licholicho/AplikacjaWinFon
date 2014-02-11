@@ -16,16 +16,18 @@ namespace PhoneApp
 {
     public partial class ListPage : PhoneApplicationPage
     {
-      DatabaseClass databaseClass = new DatabaseClass();
+        DatabaseClass databaseClass = new DatabaseClass();
         int selectedDrinkID = -1;
         List<Drink> eventsListPerDay;
-       // Grid lay;
-      //  Pivot pivotControl;
+        String ingredient1 = "ogórek";
+        String ingredient2 = "";
+        String ingredient3 = "";
+
 
         public ListPage()
         {
             InitializeComponent();
-           // init();
+            // init();
             ShowEvents();
         }
 
@@ -37,8 +39,8 @@ namespace PhoneApp
             IEnumerable<Drink> queryListDrinks = drinkList;//.OrderBy(evt => evt.DrinkName);
             eventsListPerDay = queryListDrinks.ToList();
 
-            String name = "woda";
-           
+            //          String name = "woda";
+
 
             //create panoramaItem and the ListBox
             List<ListBox> Listlistbox = new List<ListBox>();
@@ -57,7 +59,7 @@ namespace PhoneApp
             {
                 //look for events of today from EventsList
                 Drink evnt = eventsListPerDay[i];
-                System.Diagnostics.Debug.WriteLine("dlu: "+eventsListPerDay.Count+" "+evnt.DrinkName+" "+evnt.DrinkID);
+                System.Diagnostics.Debug.WriteLine("dlu: " + eventsListPerDay.Count + " " + evnt.DrinkName + " " + evnt.DrinkID);
                 TextBlock textBlockHour = new TextBlock();
                 textBlockHour.Text = evnt.DrinkName;
                 textBlockHour.Foreground = new SolidColorBrush(Colors.Magenta);
@@ -89,33 +91,54 @@ namespace PhoneApp
 
                 System.Diagnostics.Debug.WriteLine(evnt.DrinkName);
 
-                if (evnt.DrinkIngredients.Contains(name))
+                if (!ingredient1.Equals(""))
                 {
-                    System.Diagnostics.Debug.WriteLine("dziaua " +listboxindex+ " "+Listlistbox.Count);
-                    Listlistbox[listboxindex].Items.Add(stackPanel2);
-                    
+                    if (!ingredient2.Equals(""))
+                    {
+                        if (!ingredient3.Equals(""))
+                        {
+                            if (evnt.DrinkIngredients.Contains(ingredient1) && evnt.DrinkIngredients.Contains(ingredient2) && evnt.DrinkIngredients.Contains(ingredient3))
+                            {
+                                Listlistbox[listboxindex].Items.Add(stackPanel2);
+                            }
+                        }
+                        else
+                        {
+                            if (evnt.DrinkIngredients.Contains(ingredient1) && evnt.DrinkIngredients.Contains(ingredient2))
+                            {
+                                Listlistbox[listboxindex].Items.Add(stackPanel2);
+                            }
+                        }
+                    }
+                    else
+                    {
+                        if (evnt.DrinkIngredients.Contains(ingredient1))
+                        {
+                            Listlistbox[listboxindex].Items.Add(stackPanel2);
+                        }
+                    }
+
                 }
+                /*  else
+                  {
+                      listboxindex++;
+                      name = eventsListPerDay[i].DrinkName;
+                      i--;
 
-              /*  else
-                {
-                    listboxindex++;
-                    name = eventsListPerDay[i].DrinkName;
-                    i--;
+                      Listpivotitem.Add(new PivotItem());
+                      Listpivotitem[listboxindex].Header = "Drinksss";
+                      Listlistbox.Add(new ListBox());
+                      Listpivotitem[listboxindex].Content = Listlistbox[listboxindex];
 
-                    Listpivotitem.Add(new PivotItem());
-                    Listpivotitem[listboxindex].Header = "Drinksss";
-                    Listlistbox.Add(new ListBox());
-                    Listpivotitem[listboxindex].Content = Listlistbox[listboxindex];
-
-                    pivotControl.Items.Add(Listpivotitem[listboxindex]);
-                }*/
+                      pivotControl.Items.Add(Listpivotitem[listboxindex]);
+                  }*/
             }
         }
 
-       
+
         private void AddEvent_Click(object sender, EventArgs e)
         {
-            NavigationService.Navigate(new Uri("/AddPage.xaml", UriKind.Relative));
+            NavigationService.Navigate(new Uri("/AddDrinkPage.xaml", UriKind.Relative));
         }
 
         private void EditEvent_Click(object sender, EventArgs e)
@@ -154,8 +177,8 @@ namespace PhoneApp
             }
             else
             {
-                MessageBoxResult result = MessageBox.Show("Are you sure you want to delete this Drink ?", 
-                                                            "Alert", 
+                MessageBoxResult result = MessageBox.Show("Are you sure you want to delete this Drink ?",
+                                                            "Alert",
                                                             MessageBoxButton.OKCancel);
 
                 if (result == MessageBoxResult.OK)
@@ -175,7 +198,7 @@ namespace PhoneApp
                 {
                     //when cancel, unselect the selected button
                     Button btn = new Button();
-                    btn = (Button) FindName(selectedDrinkID.ToString());
+                    btn = (Button)FindName(selectedDrinkID.ToString());
                     btn.Background = new SolidColorBrush(Colors.Red);
                 }
             }
@@ -185,7 +208,7 @@ namespace PhoneApp
         {
             // clear the UI
             int l = pivotControl.Items.Count;
-            for(int i=0; i<l; i++)
+            for (int i = 0; i < l; i++)
             {
                 pivotControl.Items.RemoveAt(0);
             }
@@ -205,23 +228,39 @@ namespace PhoneApp
         protected override void OnNavigatedFrom(System.Windows.Navigation.NavigationEventArgs e)
         {
             base.OnNavigatedTo(e);
-         /*   if (e.Content is EditDrinkPage)
+            /*   if (e.Content is EditDrinkPage)
+               {
+                   //get the Drink with the specified ID
+                   Drink vnt = new Drink();
+                   foreach(Drink ev in eventsListPerDay)
+                   {
+                       if (ev.DrinkID == selectedDrinkID)
+                       {
+                           vnt = ev;
+                           break;
+                       }
+                   }
+
+                   //pass the Drink to the EditDrinkPage
+               TODO     (e.Content as EditDrinkPage).evntToEdit = vnt;
+               }*/
+            if (e.Content is FindPage)
             {
-                //get the Drink with the specified ID
-                Drink vnt = new Drink();
-                foreach(Drink ev in eventsListPerDay)
+                string s = "";
+                if (NavigationContext.QueryString.TryGetValue("ing1", out s))
                 {
-                    if (ev.DrinkID == selectedDrinkID)
-                    {
-                        vnt = ev;
-                        break;
-                    }
+                    ingredient1 = s;
                 }
+                if (NavigationContext.QueryString.TryGetValue("ing2", out s))
+                {
+                    ingredient2 = s;
+                }
+                if (NavigationContext.QueryString.TryGetValue("ing3", out s))
+                {
+                    ingredient3 = s;
+                }
+            }
 
-                //pass the Drink to the EditDrinkPage
-            TODO     (e.Content as EditDrinkPage).evntToEdit = vnt;
-            }*/
         }
-
     }
 }

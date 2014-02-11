@@ -76,6 +76,9 @@
     <Compile Include="DrinkPage.xaml.cs">
       <DependentUpon>DrinkPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="FindPage.xaml.cs">
+      <DependentUpon>FindPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Ingredient.cs" />
     <Compile Include="ListPage.xaml.cs">
       <DependentUpon>ListPage.xaml</DependentUpon>
@@ -105,6 +108,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="DrinkPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="FindPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
