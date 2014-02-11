@@ -51,8 +51,8 @@
 
     <phone:PhoneApplicationPage.ApplicationBar>
         <shell:ApplicationBar IsVisible="True" IsMenuEnabled="False">
-            <shell:ApplicationBarIconButton IconUri="Images/appbar.cancel.rest.png" Text="Cancel" Click="Cancel_Click"/>
-            <shell:ApplicationBarIconButton IconUri="Images/appbar.save.rest.png" Text="Save" Click="Save_Click"/>
+            <shell:ApplicationBarIconButton IconUri="Images/cancel.png" Text="Cancel" Click="Cancel_Click"/>
+            <shell:ApplicationBarIconButton IconUri="Images/save.png" Text="Save" Click="Save_Click"/>
             <!--  <shell:ApplicationBarIconButton IconUri="/Icons/delete.png" Text="delete"/>
             <shell:ApplicationBarIconButton IconUri="/Icons/refresh.png" Text="refresh"/>-->
             <shell:ApplicationBar.MenuItems>

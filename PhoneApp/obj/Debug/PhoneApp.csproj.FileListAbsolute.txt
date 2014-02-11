@@ -26,9 +26,6 @@ C:\Users\Kasia\Desktop\WP\AplikacjaWinFon\PhoneApp\obj\Debug\PhoneApp.pdb
 C:\Users\Kasia\Desktop\WP\AplikacjaWinFon\PhoneApp\obj\Debug\XapCacheFile.xml
 C:\Users\Kasia\Desktop\WP\AplikacjaWinFon\PhoneApp\obj\Debug\CameraPage.g.i.cs
 C:\Users\Elwirka\Documents\Visual Studio 2010\Projects\PhoneApp\PhoneApp\obj\Debug\CameraPage.g.i.cs
-C:\Users\Kasia\Desktop\WP\AplikacjaWinFon\PhoneApp\Bin\Debug\Images\appbar.add.rest.png
-C:\Users\Kasia\Desktop\WP\AplikacjaWinFon\PhoneApp\Bin\Debug\Images\appbar.cancel.rest.png
-C:\Users\Kasia\Desktop\WP\AplikacjaWinFon\PhoneApp\Bin\Debug\Images\appbar.save.rest.png
 C:\Users\Kasia\Desktop\WP\AplikacjaWinFon\PhoneApp\obj\Debug\AddPage.g.i.cs
 C:\Users\Elwirka\Documents\Visual Studio 2010\Projects\PhoneApp\PhoneApp\obj\Debug\AddPage.g.i.cs
 C:\Users\Elwirka\Documents\Visual Studio 2010\Projects\PhoneApp\PhoneApp\obj\Debug\ListPage.g.i.cs
@@ -37,3 +34,12 @@ C:\Users\Elwirka\Documents\Visual Studio 2010\Projects\PhoneApp\PhoneApp\Bin\Deb
 C:\Users\Elwirka\Documents\Visual Studio 2010\Projects\PhoneApp\PhoneApp\Bin\Debug\Images\appbar.save.rest.png
 C:\Users\Elwirka\Documents\Visual Studio 2010\Projects\PhoneApp\PhoneApp\Bin\Debug\Microsoft.Phone.Controls.dll
 C:\Users\Elwirka\Documents\Visual Studio 2010\Projects\PhoneApp\PhoneApp\Bin\Debug\Microsoft.Phone.Controls.xml
+C:\Users\Kasia\Desktop\WP\AplikacjaWinFon\PhoneApp\obj\Debug\DrinkPage.g.i.cs
+C:\Users\Kasia\Desktop\WP\AplikacjaWinFon\PhoneApp\obj\Debug\ListPage.g.i.cs
+C:\Users\Kasia\Desktop\WP\AplikacjaWinFon\PhoneApp\Bin\Debug\Images\add.png
+C:\Users\Kasia\Desktop\WP\AplikacjaWinFon\PhoneApp\Bin\Debug\Images\cancel.png
+C:\Users\Kasia\Desktop\WP\AplikacjaWinFon\PhoneApp\Bin\Debug\Images\save.png
+C:\Users\Kasia\Desktop\WP\AplikacjaWinFon\PhoneApp\Bin\Debug\Microsoft.Phone.Controls.dll
+C:\Users\Kasia\Desktop\WP\AplikacjaWinFon\PhoneApp\Bin\Debug\Microsoft.Phone.Controls.xml
+C:\Users\Kasia\Desktop\WP\AplikacjaWinFon\PhoneApp\Bin\Debug\Images\delete.png
+C:\Users\Kasia\Desktop\WP\AplikacjaWinFon\PhoneApp\Bin\Debug\Images\edit.png

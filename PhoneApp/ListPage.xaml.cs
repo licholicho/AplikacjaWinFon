@@ -115,7 +115,7 @@ namespace PhoneApp
        
         private void AddEvent_Click(object sender, EventArgs e)
         {
-            NavigationService.Navigate(new Uri("/AddDrinkPage.xaml", UriKind.Relative));
+            NavigationService.Navigate(new Uri("/AddPage.xaml", UriKind.Relative));
         }
 
         private void EditEvent_Click(object sender, EventArgs e)
