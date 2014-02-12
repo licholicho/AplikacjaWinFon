@@ -43,7 +43,14 @@ namespace PhoneApp
         private void ShowDrink()
         {
             name.Text = _currentDrink.DrinkName;
-            ingredients.Text = _currentDrink.DrinkIngredients;
+            string[] ingr = _currentDrink.DrinkIngredients.Split('$');
+            string[] weig = _currentDrink.IngredientsWeight.Split('$');
+            string outer="";
+            for (int i = 0; i < ingr.Count(); i++)
+            {
+                outer += ingr[i] + "\t" + weig[i] + "ml \n";
+            }
+            ingredients.Text = outer;
             description.Text = _currentDrink.DrinkDescription;
         }
 
