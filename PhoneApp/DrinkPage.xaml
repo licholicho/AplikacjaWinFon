@@ -26,7 +26,7 @@
             <StackPanel>
                 <!--ContentPanel - place additional content here-->
                 <Grid x:Name="ContentPanel" Grid.Row="1" Margin="12,0,12,0" Height="599" Width="433">
-                    <Image Height="239" HorizontalAlignment="Left" Margin="72,6,0,0" Name="image" Stretch="Fill" VerticalAlignment="Top" Width="322" ImageFailed="image1_ImageFailed" />
+                    <Image Height="239" HorizontalAlignment="Left" Margin="72,6,0,0" Name="image" Stretch="Fill" VerticalAlignment="Top" Width="322" />
                     <TextBlock HorizontalAlignment="Left" Margin="29,272,0,293" FontSize="25" Name="textBlock1" Text="Ingredients" />
                     <TextBlock HorizontalAlignment="Left" Margin="19,312,0,131" Name="ingredients" Text='{Binding DisplayIngredients}' Width="394" />
                     <TextBlock Height="264" HorizontalAlignment="Left" Margin="19,510,0,0" Name="description" Text='{Binding DisplayDescription}' VerticalAlignment="Top" Width="379" />

@@ -23,14 +23,14 @@ namespace PhoneApp
         private const double MinimumAccelerationMagnitudeSquared = MinimumAccelerationMagnitude*MinimumAccelerationMagnitude;
         private static readonly TimeSpan MinimumShakeTime = TimeSpan.FromMilliseconds(500);
 
-        public event EventHandler<EventArgs> ShakeEvent = null;
+        public event EventHandler<RoutedEventArgs> ShakeEvent = null;
 
 
         protected void OnShakeEvent()
         {
             if(ShakeEvent!=null)
             {
-                ShakeEvent(this, new EventArgs());
+                ShakeEvent(this, new RoutedEventArgs());
             }
         }
 

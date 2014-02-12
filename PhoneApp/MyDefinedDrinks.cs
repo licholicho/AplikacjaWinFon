@@ -18,6 +18,7 @@ namespace PhoneApp
                 DrinkID = id++,
                 DrinkName = "drink1",
                 DrinkIngredients = "skla",
+                IngredientsWeight = "",
                 DrinkDescription = "opis"
             });
             ListDrinks.Add(new Drink
@@ -25,6 +26,7 @@ namespace PhoneApp
                 DrinkID = id++,
                 DrinkName = "drink2",
                 DrinkIngredients = "woda",
+                IngredientsWeight = "",
                 DrinkDescription = "opis"
             });
             ListDrinks.Add(new Drink
@@ -32,6 +34,7 @@ namespace PhoneApp
                 DrinkID = id++,
                 DrinkName = "drink3",
                 DrinkIngredients = "ogórek, woda",
+                IngredientsWeight = "",
                 DrinkDescription = "opisas"
             });
            

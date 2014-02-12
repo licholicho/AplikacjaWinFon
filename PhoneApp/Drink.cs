@@ -29,6 +29,13 @@ namespace PhoneApp
             set;
         }
 
+        [Column(CanBeNull = false)]
+        public string IngredientsWeight
+        {
+            get;
+            set;
+        }
+
         [Column(CanBeNull = true)]
         public string DrinkDescription
         {

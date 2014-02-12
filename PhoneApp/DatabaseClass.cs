@@ -136,6 +136,18 @@ namespace PhoneApp
             catch (Exception exc) { return false; }
         }
 
+        public Drink GetDrink(string name)
+        {
+            try
+            {
+                // Query for a specific Event
+                IQueryable<Drink> DrinkQuery = from ev in DrinksDB.Drinks where ev.DrinkName == name select ev;
+                Drink Get = DrinkQuery.FirstOrDefault();
+                return Get;
+            }
+            catch (Exception exc) { return null; }
+        }
+
         public bool DeleteDrink(int drinkId)
         {
             try

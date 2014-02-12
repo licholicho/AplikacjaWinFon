@@ -16,19 +16,36 @@ namespace PhoneApp
     public partial class DrinkPage : PhoneApplicationPage
     {
 
-        Drink _currentDrink;
+        Drink _currentDrink = null;
         public DrinkPage()
         {
             InitializeComponent();
 
-//ContentPanel.DataContext = _currentDrink;
+
         }
 
-        private void image1_ImageFailed(object sender, ExceptionRoutedEventArgs e)
+
+        protected override void OnNavigatedTo(System.Windows.Navigation.NavigationEventArgs e)
         {
+            base.OnNavigatedTo(e);
 
+            string s = "";
+
+            if (NavigationContext.QueryString.TryGetValue("name", out s))
+            {
+                DatabaseClass db = new DatabaseClass();
+                _currentDrink = db.GetDrink(s);
+            }
+
+            ShowDrink();
         }
 
+        private void ShowDrink()
+        {
+            name.Text = _currentDrink.DrinkName;
+            ingredients.Text = _currentDrink.DrinkIngredients;
+            description.Text = _currentDrink.DrinkDescription;
+        }
 
 
         public string DisplayIngredients { get; set; }

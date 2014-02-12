@@ -15,35 +15,33 @@ namespace PhoneApp
 {
     public partial class MainPage : PhoneApplicationPage
     {
-        // Constructor
-        private ShakeDetector _shakeDecetor;
+
         public MainPage()
         {
             InitializeComponent();
-            _shakeDecetor = new ShakeDetector();
-            _shakeDecetor.ShakeEvent += new EventHandler<EventArgs>(_shakeDecetor_ShakeEvent);
-            _shakeDecetor.Start();
         }
 
-        void _shakeDecetor_ShakeEvent(object sender, EventArgs e)
+        private void hubTile_Tap(object sender, System.Windows.Input.GestureEventArgs e)
         {
-            this.Dispatcher.BeginInvoke(() =>
-                                            {
-                                              //  Storyboard shakeAnimation = Resources["ShakeAnimation"] as Storyboard;
-                                               // shakeAnimation.Begin();
-                                                NavigationService.Navigate(new Uri("/SecondPage.xaml", UriKind.Relative));
-                                            });
-            
-        }
+      
+            //TileItem tap = sender as TileItem;
+            HubTile tap = sender as HubTile;
+            string _tap = tap.Title.ToString();  //NullReferenceException occurs here
 
-        private void Shake_Click(object sender, EventArgs e)
-        {
-            NavigationService.Navigate(new Uri("/AddPage.xaml", UriKind.Relative));
-        }
-
-        private void HubTile_SizeChanged(object sender, SizeChangedEventArgs e)
-        {
-
+            switch (_tap)
+            {
+                //case "shareStatus_Tap":
+                case "Add":
+                    this.NavigationService.Navigate(new Uri("/AddPage.xaml", UriKind.Relative));
+                    break;
+                //case "shareLink_Tap":
+                case "Mix":
+                    this.NavigationService.Navigate(new Uri("/FindPage.xaml", UriKind.Relative));
+                    break;
+                case "Find":
+                    this.NavigationService.Navigate(new Uri("/ListPage.xaml?ing1=" + "_", UriKind.Relative));
+                    break;
+            }
         }
     }
 }

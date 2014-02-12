@@ -19,16 +19,18 @@ namespace PhoneApp
         DatabaseClass databaseClass = new DatabaseClass();
         int selectedDrinkID = -1;
         List<Drink> eventsListPerDay;
-        String ingredient1 = "ogórek";
-        String ingredient2 = "";
-        String ingredient3 = "";
+        string ingredient1; 
+        string ingredient2;
+        string ingredient3;
 
 
         public ListPage()
         {
+            ingredient1 = string.Empty;
+            ingredient2 = string.Empty;
+            ingredient3 = string.Empty;
             InitializeComponent();
-            // init();
-            ShowEvents();
+            
         }
 
         private void ShowEvents()
@@ -89,37 +91,48 @@ namespace PhoneApp
                 stackPanel2.Children.Add(button);
                 stackPanel2.Children.Add(stackPanel1);
 
-                System.Diagnostics.Debug.WriteLine(evnt.DrinkName);
+               
 
-                if (!ingredient1.Equals(""))
+                if (ingredient1.Equals("_"))
                 {
-                    if (!ingredient2.Equals(""))
+                    Listlistbox[listboxindex].Items.Add(stackPanel2);
+                }
+                else
+                {
+                    System.Diagnostics.Debug.WriteLine("skladnik1 " + ingredient1);
+                    System.Diagnostics.Debug.WriteLine("else");
+                    if (!(String.IsNullOrEmpty(ingredient1)))
                     {
-                        if (!ingredient3.Equals(""))
+                        System.Diagnostics.Debug.WriteLine("first if");
+                        if (!(String.IsNullOrEmpty(ingredient2)))
                         {
-                            if (evnt.DrinkIngredients.Contains(ingredient1) && evnt.DrinkIngredients.Contains(ingredient2) && evnt.DrinkIngredients.Contains(ingredient3))
+                            if (!(String.IsNullOrEmpty(ingredient1)))
                             {
-                                Listlistbox[listboxindex].Items.Add(stackPanel2);
+                                if (evnt.DrinkIngredients.Contains(ingredient1) && evnt.DrinkIngredients.Contains(ingredient2) && evnt.DrinkIngredients.Contains(ingredient3))
+                                {
+                                    Listlistbox[listboxindex].Items.Add(stackPanel2);
+                                }
+                            }
+                            else
+                            {
+                                if (evnt.DrinkIngredients.Contains(ingredient1) && evnt.DrinkIngredients.Contains(ingredient2))
+                                {
+                                    Listlistbox[listboxindex].Items.Add(stackPanel2);
+                                }
                             }
                         }
                         else
                         {
-                            if (evnt.DrinkIngredients.Contains(ingredient1) && evnt.DrinkIngredients.Contains(ingredient2))
+                            System.Diagnostics.Debug.WriteLine("else do tego ifa");
+                            if (evnt.DrinkIngredients.Contains(ingredient1))
                             {
                                 Listlistbox[listboxindex].Items.Add(stackPanel2);
                             }
                         }
-                    }
-                    else
-                    {
-                        if (evnt.DrinkIngredients.Contains(ingredient1))
-                        {
-                            Listlistbox[listboxindex].Items.Add(stackPanel2);
-                        }
-                    }
 
+                    }
                 }
-                /*  else
+                    /*  else
                   {
                       listboxindex++;
                       name = eventsListPerDay[i].DrinkName;
@@ -138,7 +151,7 @@ namespace PhoneApp
 
         private void AddEvent_Click(object sender, EventArgs e)
         {
-            NavigationService.Navigate(new Uri("/AddDrinkPage.xaml", UriKind.Relative));
+            NavigationService.Navigate(new Uri("/AddPage.xaml", UriKind.Relative));
         }
 
         private void EditEvent_Click(object sender, EventArgs e)
@@ -223,9 +236,11 @@ namespace PhoneApp
             Button btn = (Button)sender;
             btn.Background = new SolidColorBrush(Colors.Yellow);
             selectedDrinkID = int.Parse(btn.Name.ToString());
+            NavigationService.Navigate(new Uri("/DrinkPage.xaml?name="+eventsListPerDay[selectedDrinkID].DrinkName, UriKind.Relative));
         }
 
-        protected override void OnNavigatedFrom(System.Windows.Navigation.NavigationEventArgs e)
+
+        protected override void OnNavigatedTo(System.Windows.Navigation.NavigationEventArgs e)
         {
             base.OnNavigatedTo(e);
             /*   if (e.Content is EditDrinkPage)
@@ -244,12 +259,12 @@ namespace PhoneApp
                    //pass the Drink to the EditDrinkPage
                TODO     (e.Content as EditDrinkPage).evntToEdit = vnt;
                }*/
-            if (e.Content is FindPage)
-            {
-                string s = "";
+
+               string s = "";
+
                 if (NavigationContext.QueryString.TryGetValue("ing1", out s))
-                {
-                    ingredient1 = s;
+                {      
+                    ingredient1 = s;    
                 }
                 if (NavigationContext.QueryString.TryGetValue("ing2", out s))
                 {
@@ -259,7 +274,17 @@ namespace PhoneApp
                 {
                     ingredient3 = s;
                 }
-            }
+                //ingredient1 = NavigationContext.QueryString["ing1"];
+                System.Diagnostics.Debug.WriteLine("wywolalo sie!!!!!!!!!" + ingredient1);
+                ShowEvents();
+               // ingredient2 = NavigationContext.QueryString["ing2"];
+               // ingredient3 = NavigationContext.QueryString["ing3"];  
+       
+           /* else
+            {
+                System.Diagnostics.Debug.WriteLine("kupa");
+                ingredient1 = "_";
+            }*/
 
         }
     }

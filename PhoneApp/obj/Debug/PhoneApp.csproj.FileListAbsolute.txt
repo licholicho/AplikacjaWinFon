@@ -44,3 +44,61 @@ C:\Users\Kasia\Desktop\WP\AplikacjaWinFon\PhoneApp\Bin\Debug\Microsoft.Phone.Con
 C:\Users\Kasia\Desktop\WP\AplikacjaWinFon\PhoneApp\Bin\Debug\Images\delete.png
 C:\Users\Kasia\Desktop\WP\AplikacjaWinFon\PhoneApp\Bin\Debug\Images\edit.png
 C:\Users\Kasia\Desktop\WP\AplikacjaWinFon\PhoneApp\obj\Debug\FindPage.g.i.cs
+C:\Users\Elwirka\Dropbox\Złota Rybka\AplikacjaWinFon\PhoneApp\obj\Debug\App.g.i.cs
+C:\Users\Elwirka\Dropbox\Złota Rybka\AplikacjaWinFon\PhoneApp\obj\Debug\AddPage.g.i.cs
+C:\Users\Elwirka\Dropbox\Złota Rybka\AplikacjaWinFon\PhoneApp\obj\Debug\CameraPage.g.i.cs
+C:\Users\Elwirka\Dropbox\Złota Rybka\AplikacjaWinFon\PhoneApp\obj\Debug\DrinkPage.g.i.cs
+C:\Users\Elwirka\Dropbox\Złota Rybka\AplikacjaWinFon\PhoneApp\obj\Debug\FindPage.g.i.cs
+C:\Users\Elwirka\Dropbox\Złota Rybka\AplikacjaWinFon\PhoneApp\obj\Debug\ListPage.g.i.cs
+C:\Users\Elwirka\Dropbox\Złota Rybka\AplikacjaWinFon\PhoneApp\obj\Debug\MainPage.g.i.cs
+C:\Users\Elwirka\Dropbox\Złota Rybka\AplikacjaWinFon\PhoneApp\obj\Debug\SecondPage.g.i.cs
+C:\Users\Elwirka\Dropbox\Złota Rybka\AplikacjaWinFon\PhoneApp\obj\Debug\PhoneApp.g.resources
+C:\Users\Elwirka\Dropbox\Złota Rybka\AplikacjaWinFon\PhoneApp\obj\Debug\PhoneApp.dll
+C:\Users\Elwirka\Dropbox\Złota Rybka\AplikacjaWinFon\PhoneApp\Bin\Debug\ApplicationIcon.png
+C:\Users\Elwirka\Dropbox\Złota Rybka\AplikacjaWinFon\PhoneApp\Bin\Debug\Background.png
+C:\Users\Elwirka\Dropbox\Złota Rybka\AplikacjaWinFon\PhoneApp\Bin\Debug\Images\add.png
+C:\Users\Elwirka\Dropbox\Złota Rybka\AplikacjaWinFon\PhoneApp\Bin\Debug\Images\cancel.png
+C:\Users\Elwirka\Dropbox\Złota Rybka\AplikacjaWinFon\PhoneApp\Bin\Debug\Images\delete.png
+C:\Users\Elwirka\Dropbox\Złota Rybka\AplikacjaWinFon\PhoneApp\Bin\Debug\Images\edit.png
+C:\Users\Elwirka\Dropbox\Złota Rybka\AplikacjaWinFon\PhoneApp\Bin\Debug\Images\save.png
+C:\Users\Elwirka\Dropbox\Złota Rybka\AplikacjaWinFon\PhoneApp\Bin\Debug\PhoneApp.dll
+C:\Users\Elwirka\Dropbox\Złota Rybka\AplikacjaWinFon\PhoneApp\Bin\Debug\PhoneApp.pdb
+C:\Users\Elwirka\Dropbox\Złota Rybka\AplikacjaWinFon\PhoneApp\Bin\Debug\AppManifest.xaml
+C:\Users\Elwirka\Dropbox\Złota Rybka\AplikacjaWinFon\PhoneApp\Bin\Debug\PhoneApp.xap
+C:\Users\Elwirka\Dropbox\Złota Rybka\AplikacjaWinFon\PhoneApp\Bin\Debug\Microsoft.Phone.Controls.dll
+C:\Users\Elwirka\Dropbox\Złota Rybka\AplikacjaWinFon\PhoneApp\Bin\Debug\Microsoft.Phone.Controls.Toolkit.dll
+C:\Users\Elwirka\Dropbox\Złota Rybka\AplikacjaWinFon\PhoneApp\Bin\Debug\Microsoft.Phone.Controls.xml
+C:\Users\Elwirka\Dropbox\Złota Rybka\AplikacjaWinFon\PhoneApp\Bin\Debug\Microsoft.Phone.Controls.Toolkit.pdb
+C:\Users\Elwirka\Dropbox\Złota Rybka\AplikacjaWinFon\PhoneApp\Bin\Debug\Microsoft.Phone.Controls.Toolkit.xml
+C:\Users\Elwirka\Dropbox\Złota Rybka\AplikacjaWinFon\PhoneApp\obj\Debug\PhoneApp.pdb
+C:\Users\Elwirka\Dropbox\Złota Rybka\AplikacjaWinFon\PhoneApp\obj\Debug\XapCacheFile.xml
+D:\Dropbox\Rybeczka\AplikacjaWinFon\PhoneApp\Bin\Debug\ApplicationIcon.png
+D:\Dropbox\Rybeczka\AplikacjaWinFon\PhoneApp\Bin\Debug\Background.png
+D:\Dropbox\Rybeczka\AplikacjaWinFon\PhoneApp\Bin\Debug\Images\add.png
+D:\Dropbox\Rybeczka\AplikacjaWinFon\PhoneApp\Bin\Debug\Images\cancel.png
+D:\Dropbox\Rybeczka\AplikacjaWinFon\PhoneApp\Bin\Debug\Images\delete.png
+D:\Dropbox\Rybeczka\AplikacjaWinFon\PhoneApp\Bin\Debug\Images\edit.png
+D:\Dropbox\Rybeczka\AplikacjaWinFon\PhoneApp\Bin\Debug\Images\save.png
+D:\Dropbox\Rybeczka\AplikacjaWinFon\PhoneApp\Bin\Debug\PhoneApp.dll
+D:\Dropbox\Rybeczka\AplikacjaWinFon\PhoneApp\Bin\Debug\PhoneApp.pdb
+D:\Dropbox\Rybeczka\AplikacjaWinFon\PhoneApp\Bin\Debug\AppManifest.xaml
+D:\Dropbox\Rybeczka\AplikacjaWinFon\PhoneApp\Bin\Debug\PhoneApp.xap
+D:\Dropbox\Rybeczka\AplikacjaWinFon\PhoneApp\Bin\Debug\Microsoft.Phone.Controls.dll
+D:\Dropbox\Rybeczka\AplikacjaWinFon\PhoneApp\Bin\Debug\Microsoft.Phone.Controls.Toolkit.dll
+D:\Dropbox\Rybeczka\AplikacjaWinFon\PhoneApp\Bin\Debug\Microsoft.Phone.Controls.xml
+D:\Dropbox\Rybeczka\AplikacjaWinFon\PhoneApp\Bin\Debug\Microsoft.Phone.Controls.Toolkit.pdb
+D:\Dropbox\Rybeczka\AplikacjaWinFon\PhoneApp\Bin\Debug\Microsoft.Phone.Controls.Toolkit.xml
+D:\Dropbox\Rybeczka\AplikacjaWinFon\PhoneApp\obj\Debug\App.g.i.cs
+D:\Dropbox\Rybeczka\AplikacjaWinFon\PhoneApp\obj\Debug\AddPage.g.i.cs
+D:\Dropbox\Rybeczka\AplikacjaWinFon\PhoneApp\obj\Debug\CameraPage.g.i.cs
+D:\Dropbox\Rybeczka\AplikacjaWinFon\PhoneApp\obj\Debug\DrinkPage.g.i.cs
+D:\Dropbox\Rybeczka\AplikacjaWinFon\PhoneApp\obj\Debug\FindPage.g.i.cs
+D:\Dropbox\Rybeczka\AplikacjaWinFon\PhoneApp\obj\Debug\ListPage.g.i.cs
+D:\Dropbox\Rybeczka\AplikacjaWinFon\PhoneApp\obj\Debug\MainPage.g.i.cs
+D:\Dropbox\Rybeczka\AplikacjaWinFon\PhoneApp\obj\Debug\SecondPage.g.i.cs
+D:\Dropbox\Rybeczka\AplikacjaWinFon\PhoneApp\obj\Debug\PhoneApp.g.resources
+D:\Dropbox\Rybeczka\AplikacjaWinFon\PhoneApp\obj\Debug\PhoneApp.dll
+D:\Dropbox\Rybeczka\AplikacjaWinFon\PhoneApp\obj\Debug\PhoneApp.pdb
+D:\Dropbox\Rybeczka\AplikacjaWinFon\PhoneApp\obj\Debug\XapCacheFile.xml
+D:\Dropbox\Rybeczka\AplikacjaWinFon\PhoneApp\obj\Debug\AboutPage.g.i.cs
+C:\Users\Elwirka\Dropbox\Złota Rybka\AplikacjaWinFon\PhoneApp\obj\Debug\AboutPage.g.i.cs
