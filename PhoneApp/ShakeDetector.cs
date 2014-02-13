@@ -129,13 +129,9 @@ namespace PhoneApp
             //care about?
             if ((e.X*e.X + e.Y*e.Y) > MinimumAccelerationMagnitudeSquared)
             {
-                //I prefer to work in radians. For the sake of those reading this code
-                //I will work in degrees. In the following direction will contain the direction
-                // in which the device was accelerating in degrees. 
                 double degrees = 180.0*Math.Atan2(e.Y, e.X)/Math.PI;
                 Direction direction = DegreesToDirection(degrees);
 
-                //If the shake detected is in the same direction as the last one then ignore it
                 if ((direction & _shakeRecordList[_shakeRecordIndex].ShakeDirection) != Direction.None)
                     return;
                 ShakeRecord record = new ShakeRecord();

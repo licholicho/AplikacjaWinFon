@@ -21,8 +21,6 @@ namespace PhoneApp
         {
             InitializeComponent();
             show();
-            //this.Details.Text = "Welcome to ALCO3!\nALCO3 is an app which helps you to find awesome non-alcoholic drinks!\n"
-              //                  + " \n \n";
         }
 
         private void show() 

@@ -24,14 +24,7 @@ namespace PhoneApp
             _shakeDetector.ShakeEvent += new EventHandler<RoutedEventArgs>(_shakeDetector_ShakeEvent);
             _shakeDetector.Start();
         }
-        /*
-        private void passParam_Click(object sender, RoutedEventArgs e)
-        {
-            NavigationService.Navigate(new Uri("/ListPage.xaml?ing1=" + textBox1.Text 
-                                                             + "&ing2=" + textBox2.Text
-                                                             + "&ing3=" + textBox3.Text, UriKind.Relative));
-        }
-        */
+
         void _shakeDetector_ShakeEvent(object sender, RoutedEventArgs e)
         {
             this.Dispatcher.BeginInvoke(() =>

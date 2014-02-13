@@ -17,6 +17,7 @@ namespace PhoneApp
     {
 
         List<StackPanel> listIngredients;
+       
         ListBox listbox = new ListBox();
         int howMany;
         TextBox desc;
@@ -40,7 +41,6 @@ namespace PhoneApp
             pivotControl.Items.Add(Listpivotitem[0]);
             listbox.Items.Add(AddIngredient());
             desc = new TextBox();
-
         }
 
         private StackPanel AddIngredient()
@@ -220,10 +220,19 @@ namespace PhoneApp
                     add.DrinkDescription = descr;
                 }
 
-                DatabaseClass databaseClass = new DatabaseClass();
-                databaseClass.AddDrink(add);
-                NavigationService.Navigate(new Uri("/ListPage.xaml?ing1=" + "_", UriKind.Relative));
-            }
+                MessageBoxResult result = MessageBox.Show("Are you sure you want to add this Drink ?",
+                                                        "Alert",
+                                                        MessageBoxButton.OKCancel);
+
+                if (result == MessageBoxResult.OK)
+                {
+                    DatabaseClass databaseClass = new DatabaseClass();
+                    databaseClass.AddDrink(add);
+                    NavigationService.Navigate(new Uri("/ListPage.xaml?ing1=" + "_", UriKind.Relative));
+         
+                }
+
+                  }
             else
             {
                 MessageBox.Show("Please give name and one ingredient !");
@@ -234,18 +243,7 @@ namespace PhoneApp
 
         private void button1_Click(object sender, RoutedEventArgs e)
         {
-
-            if (button2.IsEnabled)
-            {
-                listbox.Items.Add(AddIngredient());
-            }
-            else
-            {
-                /* ListBox tmp = (ListBox) listbox.Items.ElementAt(listbox.Items.Count()-1);
-                 listbox.Items.RemoveAt(listbox.Items.Count()-1);*/
-                listbox.Items.Add(AddIngredient());
-                // listbox.Items.Add(tmp);
-            }
+                listbox.Items.Add(AddIngredient()); 
         }
 
         private void button2_Click(object sender, RoutedEventArgs e)

@@ -12,11 +12,10 @@ namespace PhoneApp
         {
             int id = 0;
 
-            //September, 1, 2012 
             ListDrinks.Add(new Drink
             {
                 DrinkID = id++,
-                DrinkName = "Sweet tropico",
+                DrinkName = "Sweet Tropico",
                 DrinkIngredients = "orange juice$pineapple juice$lemon juice$sugar syrup$soda water",
                 IngredientsWeight = "50$50$25$15$15",
                 DrinkDescription = "Shake and strain into an ice-filled highball glass, and add soda. Decorate with a slice of lemon, add a straw, and serve."
@@ -25,7 +24,7 @@ namespace PhoneApp
             ListDrinks.Add(new Drink
             {
                 DrinkID = id++,
-                DrinkName = "Early morning",
+                DrinkName = "Early Morning",
                 DrinkIngredients = "orange juice$grapefruit juice$apple juice",
                 IngredientsWeight = "40$30$10",
                 DrinkDescription = "Stir together in a highball glass. Decorate with a maraschino cherry, and serve."
@@ -52,7 +51,7 @@ namespace PhoneApp
             ListDrinks.Add(new Drink
         {
             DrinkID = id++,
-            DrinkName = "Crazy orange",
+            DrinkName = "Crazy Orange",
             DrinkIngredients = "peach nectar$orange juice",
             IngredientsWeight = "50$150",
             DrinkDescription = "Pour peach nectar and orange juice into a chilled glass filled with ice cubes. Stir well and decorate with a slice of orange."
@@ -61,7 +60,7 @@ namespace PhoneApp
             ListDrinks.Add(new Drink
         {
             DrinkID = id++,
-            DrinkName = "Twillight",
+            DrinkName = "Twighlight",
             DrinkIngredients = "cherry juice$banana juice",
             IngredientsWeight = "100$100",
             DrinkDescription = "Pour all ingredients into a highball glass over ice cubes and serve."
@@ -78,7 +77,7 @@ namespace PhoneApp
             ListDrinks.Add(new Drink
       {
           DrinkID = id++,
-          DrinkName = "Bloody night",
+          DrinkName = "Bloody Night",
           DrinkIngredients = "lime juice$sugar syrup$raspberry syrup$grenadine syrup$soda water",
           IngredientsWeight = "40$25$15$7$75",
           DrinkDescription = "Rim a wine glass with lime/caster sugar, add a spiral of lime, and fill with crushed ice. Stir lime juice and syrups together, and strain into the glass. Add the soda and sprinkle the grenadine on top."
@@ -113,7 +112,7 @@ namespace PhoneApp
             ListDrinks.Add(new Drink
             {
                 DrinkID = id++,
-                DrinkName = "Wings of wisdom",
+                DrinkName = "Wings Of Wisdom",
                 DrinkIngredients = "grenadine syrup$soda water$lemonade",
                 IngredientsWeight = "15$75$75",
                 DrinkDescription = "Pour into an ice-filled highball glass. Decorate with fruit, and serve with a straw."
@@ -138,7 +137,7 @@ namespace PhoneApp
             ListDrinks.Add(new Drink
             {
                 DrinkID = id++,
-                DrinkName = "Choco choco",
+                DrinkName = "Chico Choc",
                 DrinkIngredients = "milk$cream$coconut cream$chocolate syrup",
                 IngredientsWeight = "90$20$20$50",
                 DrinkDescription = "Shake liquids well over ice cubes in a shaker, and strain into a large highball glass over crushed ice."
@@ -200,7 +199,7 @@ namespace PhoneApp
             ListDrinks.Add(new Drink
             {
                 DrinkID = id++,
-                DrinkName = "Surf Coast Sunset",
+                DrinkName = "Surfer",
                 DrinkIngredients = "apple juice$orange juice$grenadine syrup",
                 IngredientsWeight = "100$100$15",
                 DrinkDescription = "Pour juices over ice. Add a teaspoon of grenadine syrup, do not mix."
@@ -224,6 +223,33 @@ namespace PhoneApp
                 DrinkDescription = "Pour over ice and stir."
             });
 
+
+        ListDrinks.Add(new Drink
+        {
+            DrinkID = id++,
+            DrinkName = "CocoPalm",
+            DrinkIngredients = "pineapple juice$coconut milk",
+            IngredientsWeight = "150$70",
+            DrinkDescription = "Mix all ingredients, pour over ice and serve in a tall glass."
+        });
+
+        ListDrinks.Add(new Drink
+        {
+            DrinkID = id++,
+            DrinkName = "ExoTico",
+            DrinkIngredients = "orange juice$pineapple juice$lime juice$soda water",
+            IngredientsWeight = "50$50$25$10$25",
+            DrinkDescription = "Pour all ingredients into a shaker. Mix with ice and pour into a tall glass. Fill up with soda water and decorate with a lemon slice."
+        });
+
+        ListDrinks.Add(new Drink
+        {
+            DrinkID = id++,
+            DrinkName = "Duo Coloro",
+            DrinkIngredients = "milk$banana juice$grenadine syrup$Blue Curacao syrup",
+            IngredientsWeight = "30$70$15$15",
+            DrinkDescription = "Blend milk with banana juice. Devide the resulting mass into two equal parts. Add Blue Curacao syrup to first part blue and grenadine syrup to the second red. Mix each mass separately. Pour both into the glass to form two equal layers. "
+        });
 
 
 

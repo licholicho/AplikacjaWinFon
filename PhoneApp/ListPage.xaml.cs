@@ -19,7 +19,7 @@ namespace PhoneApp
     {
         DatabaseClass databaseClass = new DatabaseClass();
         int selectedDrinkID = -1;
-        List<Drink> eventsListPerDay;
+        List<Drink> listOfDrinks;
         string ingredient1;
         string ingredient2;
         string ingredient3;
@@ -38,17 +38,12 @@ namespace PhoneApp
 
         }
 
-        private void ShowEvents()
+        private void ShowDrinks()
         {
             IList<Drink> drinkList = databaseClass.GetDrinksList();
-            //eventsListPerDay = TransformToEventsListPerDay(eventsList);
-            IEnumerable<Drink> queryListDrinks = drinkList;//.OrderBy(evt => evt.DrinkName);
-            eventsListPerDay = queryListDrinks.ToList();
+            IEnumerable<Drink> queryListDrinks = drinkList;
+            listOfDrinks = queryListDrinks.ToList();
 
-
-
-
-            //create panoramaItem and the ListBox
             List<ListBox> Listlistbox = new List<ListBox>();
             Listlistbox.Add(new ListBox());
 
@@ -56,22 +51,20 @@ namespace PhoneApp
             Listpivotitem.Add(new PivotItem());
             Listpivotitem[0].Header = "Drink List             ";
             Listpivotitem[0].Margin = new Thickness(0, 50, 0, 100);
-            //  Listpivotitem[0].Foreground = new SolidColorBrush(Colors.Yellow);
 
             Listpivotitem[0].Content = Listlistbox[0];
             pivotControl.Items.Add(Listpivotitem[0]);
 
             int listboxindex = 0;
 
-            for (int i = 0; i < eventsListPerDay.Count; i++)// Drink evnt in eventsListPerDay)
+            for (int i = 0; i < listOfDrinks.Count; i++)
             {
-                //look for events of today from EventsList
                 Uri uri = new Uri("Images/appIcon.png", UriKind.Relative);
                 BitmapImage imgSource = new BitmapImage(uri);
                 ImageBrush imageBrush = new ImageBrush();
                 imageBrush.ImageSource = imgSource;
 
-                Drink evnt = eventsListPerDay[i];
+                Drink evnt = listOfDrinks[i];
                 TextBlock textBlockHour = new TextBlock();
                 textBlockHour.Text = evnt.DrinkName;
                 textBlockHour.Foreground = new SolidColorBrush(Colors.Yellow);
@@ -89,14 +82,13 @@ namespace PhoneApp
                 stackPanel1.Children.Add(textBlockNameAndPlace);
 
                 Button button = new Button();
-                //  button.Background = new SolidColorBrush(Colors.Yellow);
                 button.Background = imageBrush;
                 button.Height = 100;
                 button.Width = 100;
                 button.BorderThickness = new Thickness(3, 3, 3, 3);
                 button.BorderBrush = new SolidColorBrush(Colors.Yellow);
                 button.Margin = new Thickness(0, 0, 10, 0);
-                button.Name = eventsListPerDay[i].DrinkID.ToString();
+                button.Name = listOfDrinks[i].DrinkID.ToString();
                 button.Click += new RoutedEventHandler(button_Click);
 
                 StackPanel stackPanel2 = new StackPanel();
@@ -154,7 +146,7 @@ namespace PhoneApp
 
         private void EditEvent_Click(object sender, EventArgs e)
         {
-            if (selectedDrinkID == -1)//no item selected
+            if (selectedDrinkID == -1)
             {
                 MessageBox.Show("Select an Drink please !");
             }
@@ -171,7 +163,6 @@ namespace PhoneApp
                 }
                 else
                 {
-                    //when cancel, unselect the selected button
                     Button btn = new Button();
                     btn = (Button)FindName(selectedDrinkID.ToString());
                     btn.Background = new SolidColorBrush(Colors.Red);
@@ -183,22 +174,19 @@ namespace PhoneApp
 
         private void Refresh_Click(object sender, EventArgs e)
         {
-            // clear the UI
             int l = pivotControl.Items.Count;
             for (int i = 0; i < l; i++)
             {
                 pivotControl.Items.RemoveAt(0);
             }
 
-            //show the events
-            ShowEvents();
+            ShowDrinks();
         }
 
         public void button_Click(object sender, RoutedEventArgs e)
         {
             ApplicationBar.Mode = Microsoft.Phone.Shell.ApplicationBarMode.Default;
             Button btn = (Button)sender;
-            //    btn.Background = new SolidColorBrush(Colors.Yellow);
             selectedDrinkID = int.Parse(btn.Name.ToString());
             Drink dr = databaseClass.GetDrinkByID(selectedDrinkID);
             NavigationService.Navigate(new Uri("/DrinkPage.xaml?name=" + dr.DrinkName, UriKind.Relative));
@@ -225,7 +213,7 @@ namespace PhoneApp
             }
 
 
-            ShowEvents();
+            ShowDrinks();
 
             var lastPage = NavigationService.BackStack.FirstOrDefault();
 

@@ -57,7 +57,6 @@ C:\Users\Elwirka\Dropbox\Złota Rybka\AplikacjaWinFon\PhoneApp\Bin\Debug\Backgro
 C:\Users\Elwirka\Dropbox\Złota Rybka\AplikacjaWinFon\PhoneApp\Bin\Debug\Images\add.png
 C:\Users\Elwirka\Dropbox\Złota Rybka\AplikacjaWinFon\PhoneApp\Bin\Debug\Images\cancel.png
 C:\Users\Elwirka\Dropbox\Złota Rybka\AplikacjaWinFon\PhoneApp\Bin\Debug\Images\delete.png
-C:\Users\Elwirka\Dropbox\Złota Rybka\AplikacjaWinFon\PhoneApp\Bin\Debug\Images\edit.png
 C:\Users\Elwirka\Dropbox\Złota Rybka\AplikacjaWinFon\PhoneApp\Bin\Debug\Images\save.png
 C:\Users\Elwirka\Dropbox\Złota Rybka\AplikacjaWinFon\PhoneApp\Bin\Debug\PhoneApp.dll
 C:\Users\Elwirka\Dropbox\Złota Rybka\AplikacjaWinFon\PhoneApp\Bin\Debug\PhoneApp.pdb
@@ -75,7 +74,6 @@ D:\Dropbox\Rybeczka\AplikacjaWinFon\PhoneApp\Bin\Debug\Background.png
 D:\Dropbox\Rybeczka\AplikacjaWinFon\PhoneApp\Bin\Debug\Images\add.png
 D:\Dropbox\Rybeczka\AplikacjaWinFon\PhoneApp\Bin\Debug\Images\cancel.png
 D:\Dropbox\Rybeczka\AplikacjaWinFon\PhoneApp\Bin\Debug\Images\delete.png
-D:\Dropbox\Rybeczka\AplikacjaWinFon\PhoneApp\Bin\Debug\Images\edit.png
 D:\Dropbox\Rybeczka\AplikacjaWinFon\PhoneApp\Bin\Debug\Images\save.png
 D:\Dropbox\Rybeczka\AplikacjaWinFon\PhoneApp\Bin\Debug\PhoneApp.dll
 D:\Dropbox\Rybeczka\AplikacjaWinFon\PhoneApp\Bin\Debug\PhoneApp.pdb
@@ -98,3 +96,5 @@ D:\Dropbox\Rybeczka\AplikacjaWinFon\PhoneApp\obj\Debug\PhoneApp.pdb
 D:\Dropbox\Rybeczka\AplikacjaWinFon\PhoneApp\obj\Debug\XapCacheFile.xml
 D:\Dropbox\Rybeczka\AplikacjaWinFon\PhoneApp\obj\Debug\AboutPage.g.i.cs
 C:\Users\Elwirka\Dropbox\Złota Rybka\AplikacjaWinFon\PhoneApp\obj\Debug\AboutPage.g.i.cs
+D:\Dropbox\Rybeczka\AplikacjaWinFon\PhoneApp\obj\Debug\PhoneApp.csprojResolveAssemblyReference.cache
+C:\Users\Elwirka\Dropbox\Złota Rybka\AplikacjaWinFon\PhoneApp\obj\Debug\PhoneApp.csprojResolveAssemblyReference.cache

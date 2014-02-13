@@ -36,23 +36,6 @@
             <controls:Pivot Title=" " Name="pivotControl" Margin="0,-15,0,142">
 
             </controls:Pivot>
-            <!--  <StackPanel Name="lala" Margin="0,0,0,142">
-                <TextBlock Height="30" Foreground="Yellow"  Name="textBlock1" Text="Name" Width="426" />
-                <TextBox Height="70"  Name="NAME" Text="Blood Mery" Width="456" TextChanged="TextBoxEventName_TextChanged" />
-                
-                <StackPanel Name="OneIngredient" Orientation="Horizontal">
-                    <StackPanel Name="OneIngr">
-                        <TextBlock Height="30" Foreground="Yellow" Name="textBlock2" Text="Ingrediens" Width="256" />
-                        <TextBox Height="70" Name="ing1" Text="" Width="280" />
-                    </StackPanel>
-                    
-                    <StackPanel Name="OneWei">
-                        <TextBlock Height="30" Foreground="Yellow" Name="textBlock3" Text="Weight" Width="83" />
-                        <TextBox Height="70" Name="we1" InputScope="Number" Text="" Width="98" />
-                    </StackPanel>
-                    <TextBlock FontSize="25" Foreground="Yellow" Margin="0,40,0,10" Name="ml" Text="ml" Width="62" Height="36" />
-                </StackPanel>
-                 </StackPanel>-->
             <Button Content="Add ingredient" Height="72" Name="button1" Margin="5,402,0,64" HorizontalAlignment="Left" Width="435" Click="button1_Click" />
             <Button Content="Add description" Height="72" Name="button2" Margin="5,460,15,6" Click="button2_Click" />
         </Grid>
@@ -62,8 +45,6 @@
         <shell:ApplicationBar IsVisible="True" IsMenuEnabled="False">
             <shell:ApplicationBarIconButton IconUri="Images/cancel.png" Text="Cancel" Click="Cancel_Click"/>
             <shell:ApplicationBarIconButton IconUri="Images/save.png" Text="Save" Click="Save_Click"/>
-            <!--  <shell:ApplicationBarIconButton IconUri="/Icons/delete.png" Text="delete"/>
-            <shell:ApplicationBarIconButton IconUri="/Icons/refresh.png" Text="refresh"/>-->
             <shell:ApplicationBar.MenuItems>
 
             </shell:ApplicationBar.MenuItems>

@@ -23,18 +23,14 @@ namespace PhoneApp
 
         private void hubTile_Tap(object sender, System.Windows.Input.GestureEventArgs e)
         {
-      
-            //TileItem tap = sender as TileItem;
             HubTile tap = sender as HubTile;
-            string _tap = tap.Title.ToString();  //NullReferenceException occurs here
+            string _tap = tap.Title.ToString(); 
 
             switch (_tap)
             {
-                //case "shareStatus_Tap":
                 case "Add":
                     this.NavigationService.Navigate(new Uri("/AddPage.xaml", UriKind.Relative));
                     break;
-                //case "shareLink_Tap":
                 case "Mix":
                     this.NavigationService.Navigate(new Uri("/FindPage.xaml", UriKind.Relative));
                     break;
