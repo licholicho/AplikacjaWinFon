@@ -43,5 +43,16 @@ namespace PhoneApp
             });
 
         }
+
+        protected override void OnNavigatedTo(System.Windows.Navigation.NavigationEventArgs e)
+        {
+            base.OnNavigatedTo(e);
+
+            var lastPage = NavigationService.BackStack.FirstOrDefault();
+            if (lastPage != null && lastPage.Source.ToString() != "/MainPage.xaml")
+            {
+                NavigationService.RemoveBackEntry();
+            }
+        }
     }
 }

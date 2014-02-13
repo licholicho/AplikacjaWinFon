@@ -7,6 +7,7 @@
 
     <!--Application Resources-->
     <Application.Resources>
+        <ImageBrush x:Key="MainBackground" ImageSource="Images/back.png" />
     </Application.Resources>
 
     <Application.ApplicationLifetimeObjects>

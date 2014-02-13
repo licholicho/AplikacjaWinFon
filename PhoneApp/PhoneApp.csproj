@@ -72,9 +72,6 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
-    <Compile Include="CameraPage.xaml.cs">
-      <DependentUpon>CameraPage.xaml</DependentUpon>
-    </Compile>
     <Compile Include="DatabaseClass.cs" />
     <Compile Include="Drink.cs" />
     <Compile Include="DrinkPage.xaml.cs">
@@ -83,7 +80,6 @@
     <Compile Include="FindPage.xaml.cs">
       <DependentUpon>FindPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Ingredient.cs" />
     <Compile Include="ListPage.xaml.cs">
       <DependentUpon>ListPage.xaml</DependentUpon>
     </Compile>
@@ -93,9 +89,6 @@
     <Compile Include="MyDataContext.cs" />
     <Compile Include="MyDefinedDrinks.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="SecondPage.xaml.cs">
-      <DependentUpon>SecondPage.xaml</DependentUpon>
-    </Compile>
     <Compile Include="ShakeDetector.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -108,10 +101,6 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="AddPage.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="CameraPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -128,10 +117,6 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="MainPage.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="SecondPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -152,6 +137,9 @@
     </Content>
     <Resource Include="Images\adddrink.jpg" />
     <Resource Include="Images\blender.jpg" />
+    <Resource Include="Images\background.png" />
+    <Resource Include="Images\back.png" />
+    <Resource Include="Images\appIcon.png" />
     <Content Include="Images\cancel.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>

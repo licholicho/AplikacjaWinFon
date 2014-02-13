@@ -46,12 +46,10 @@ C:\Users\Kasia\Desktop\WP\AplikacjaWinFon\PhoneApp\Bin\Debug\Images\edit.png
 C:\Users\Kasia\Desktop\WP\AplikacjaWinFon\PhoneApp\obj\Debug\FindPage.g.i.cs
 C:\Users\Elwirka\Dropbox\Złota Rybka\AplikacjaWinFon\PhoneApp\obj\Debug\App.g.i.cs
 C:\Users\Elwirka\Dropbox\Złota Rybka\AplikacjaWinFon\PhoneApp\obj\Debug\AddPage.g.i.cs
-C:\Users\Elwirka\Dropbox\Złota Rybka\AplikacjaWinFon\PhoneApp\obj\Debug\CameraPage.g.i.cs
 C:\Users\Elwirka\Dropbox\Złota Rybka\AplikacjaWinFon\PhoneApp\obj\Debug\DrinkPage.g.i.cs
 C:\Users\Elwirka\Dropbox\Złota Rybka\AplikacjaWinFon\PhoneApp\obj\Debug\FindPage.g.i.cs
 C:\Users\Elwirka\Dropbox\Złota Rybka\AplikacjaWinFon\PhoneApp\obj\Debug\ListPage.g.i.cs
 C:\Users\Elwirka\Dropbox\Złota Rybka\AplikacjaWinFon\PhoneApp\obj\Debug\MainPage.g.i.cs
-C:\Users\Elwirka\Dropbox\Złota Rybka\AplikacjaWinFon\PhoneApp\obj\Debug\SecondPage.g.i.cs
 C:\Users\Elwirka\Dropbox\Złota Rybka\AplikacjaWinFon\PhoneApp\obj\Debug\PhoneApp.g.resources
 C:\Users\Elwirka\Dropbox\Złota Rybka\AplikacjaWinFon\PhoneApp\obj\Debug\PhoneApp.dll
 C:\Users\Elwirka\Dropbox\Złota Rybka\AplikacjaWinFon\PhoneApp\Bin\Debug\ApplicationIcon.png
@@ -90,12 +88,10 @@ D:\Dropbox\Rybeczka\AplikacjaWinFon\PhoneApp\Bin\Debug\Microsoft.Phone.Controls.
 D:\Dropbox\Rybeczka\AplikacjaWinFon\PhoneApp\Bin\Debug\Microsoft.Phone.Controls.Toolkit.xml
 D:\Dropbox\Rybeczka\AplikacjaWinFon\PhoneApp\obj\Debug\App.g.i.cs
 D:\Dropbox\Rybeczka\AplikacjaWinFon\PhoneApp\obj\Debug\AddPage.g.i.cs
-D:\Dropbox\Rybeczka\AplikacjaWinFon\PhoneApp\obj\Debug\CameraPage.g.i.cs
 D:\Dropbox\Rybeczka\AplikacjaWinFon\PhoneApp\obj\Debug\DrinkPage.g.i.cs
 D:\Dropbox\Rybeczka\AplikacjaWinFon\PhoneApp\obj\Debug\FindPage.g.i.cs
 D:\Dropbox\Rybeczka\AplikacjaWinFon\PhoneApp\obj\Debug\ListPage.g.i.cs
 D:\Dropbox\Rybeczka\AplikacjaWinFon\PhoneApp\obj\Debug\MainPage.g.i.cs
-D:\Dropbox\Rybeczka\AplikacjaWinFon\PhoneApp\obj\Debug\SecondPage.g.i.cs
 D:\Dropbox\Rybeczka\AplikacjaWinFon\PhoneApp\obj\Debug\PhoneApp.g.resources
 D:\Dropbox\Rybeczka\AplikacjaWinFon\PhoneApp\obj\Debug\PhoneApp.dll
 D:\Dropbox\Rybeczka\AplikacjaWinFon\PhoneApp\obj\Debug\PhoneApp.pdb

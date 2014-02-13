@@ -41,6 +41,20 @@ namespace PhoneApp
                 case "Find":
                     this.NavigationService.Navigate(new Uri("/ListPage.xaml?ing1=" + "_", UriKind.Relative));
                     break;
+                case "About":
+                    this.NavigationService.Navigate(new Uri("/AboutPage.xaml", UriKind.Relative));
+                    break;
+            }
+        }
+
+        protected override void OnNavigatedTo(System.Windows.Navigation.NavigationEventArgs e)
+        {
+            base.OnNavigatedTo(e);
+            
+            var lastPage = NavigationService.BackStack.FirstOrDefault();
+            if (lastPage != null && lastPage.Source.ToString() == "/AddPage.xaml")
+            {
+                NavigationService.RemoveBackEntry();
             }
         }
     }

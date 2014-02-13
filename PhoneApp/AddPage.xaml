@@ -2,6 +2,7 @@
     x:Class="PhoneApp.AddPage"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:controls="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone.Controls"
     xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
     xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
@@ -23,29 +24,37 @@
 
         <!--TitlePanel contains the name of the application and page title-->
         <StackPanel x:Name="TitlePanel" Grid.Row="0" Margin="12,17,0,28">
-            <TextBlock x:Name="ApplicationTitle" Text="My Schedule Calendar" Style="{StaticResource PhoneTextNormalStyle}"/>
-            <TextBlock x:Name="PageTitle" Text="Add Drink" Margin="9,-7,0,0" Style="{StaticResource PhoneTextTitle1Style}"/>
+            <TextBlock x:Name="ApplicationTitle" Text="ALCO3"  Margin="20,0,0,0"  Foreground="Yellow" Style="{StaticResource PhoneTextNormalStyle}"/>
+            <TextBlock x:Name="PageTitle" Text="Add Drink" Margin="20,-10,0,0" Style="{StaticResource PhoneTextTitle1Style}"/>
         </StackPanel>
 
         <!--ContentPanel - place additional content here-->
         <Grid x:Name="ContentPanel" Grid.Row="1" Margin="12,0,12,0" >
-            <TextBox Height="72" HorizontalAlignment="Left" Margin="32,26,0,0" Name="NAME" Text="Blood Mery" VerticalAlignment="Top" Width="382" TextChanged="TextBoxEventName_TextChanged" />
-            <TextBlock Height="30" HorizontalAlignment="Left" Margin="46,4,0,0" Name="textBlock1" Text="Name" VerticalAlignment="Top" Width="216" />
-            <TextBox Height="60" HorizontalAlignment="Left" Margin="32,126,0,0" Name="ing1" Text="" VerticalAlignment="Top" Width="230"  />
-            <TextBlock Height="30" HorizontalAlignment="Left" Margin="46,104,0,0" Name="textBlock2" Text="Ingrediens" VerticalAlignment="Top" Width="216" />
-            <Button Content="Gallery" Height="72" HorizontalAlignment="Left" Margin="230,472,0,0" Name="button1" VerticalAlignment="Top" Width="184" Click="Gallery_Click" />
-            <Button Content="Camera" Height="72" HorizontalAlignment="Left" Margin="30,472,0,0" Name="button2" VerticalAlignment="Top" Width="197" Click="Camera_Click" />
-            <TextBox Height="60" HorizontalAlignment="Left" Margin="291,126,0,0" Name="we1" Text="" VerticalAlignment="Top" Width="123"  />
-            <TextBlock Height="30" HorizontalAlignment="Left" Margin="306,104,0,0" Name="textBlock3" Text="Weight" VerticalAlignment="Top" Width="83" />
-            <TextBox Height="60" HorizontalAlignment="Left" Margin="30,204,0,0" Name="ing2" Text="" VerticalAlignment="Top" Width="230"  />
-            <TextBlock Height="30" HorizontalAlignment="Left" Margin="44,182,0,0" Name="textBlock4" Text="Ingrediens" VerticalAlignment="Top" Width="216" />
-            <TextBox Height="60" HorizontalAlignment="Left" Margin="288,204,0,0" Name="we2" Text="" VerticalAlignment="Top" Width="123" />
-            <TextBlock Height="30" HorizontalAlignment="Left" Margin="304,182,0,0" Name="textBlock5" Text="Weight" VerticalAlignment="Top" Width="83" />
-            <TextBox Height="60" HorizontalAlignment="Left" Margin="30,292,0,0" Name="ing3" Text="" VerticalAlignment="Top" Width="230" />
-            <TextBlock Height="30" HorizontalAlignment="Left" Margin="44,270,0,0" Name="textBlock6" Text="Ingrediens" VerticalAlignment="Top" Width="216" />
-            <TextBox Height="60" HorizontalAlignment="Left" Margin="289,292,0,0" Name="we3" Text="" VerticalAlignment="Top" Width="123" />
-            <TextBlock Height="30" HorizontalAlignment="Left" Margin="304,270,0,0" Name="textBlock7" Text="Weight" VerticalAlignment="Top" Width="83" />
-            <TextBox Height="108" HorizontalAlignment="Left" Margin="32,358,0,0" Name="desc" Text="Desription" VerticalAlignment="Top" Width="382"  />
+            <StackPanel  >
+                <TextBlock Height="30" Foreground="Yellow"  Name="textBlock1" Text="Name" Margin="20,0,0,0" Width="433" />
+            </StackPanel>
+            <controls:Pivot Title=" " Name="pivotControl" Margin="0,-15,0,142">
+
+            </controls:Pivot>
+            <!--  <StackPanel Name="lala" Margin="0,0,0,142">
+                <TextBlock Height="30" Foreground="Yellow"  Name="textBlock1" Text="Name" Width="426" />
+                <TextBox Height="70"  Name="NAME" Text="Blood Mery" Width="456" TextChanged="TextBoxEventName_TextChanged" />
+                
+                <StackPanel Name="OneIngredient" Orientation="Horizontal">
+                    <StackPanel Name="OneIngr">
+                        <TextBlock Height="30" Foreground="Yellow" Name="textBlock2" Text="Ingrediens" Width="256" />
+                        <TextBox Height="70" Name="ing1" Text="" Width="280" />
+                    </StackPanel>
+                    
+                    <StackPanel Name="OneWei">
+                        <TextBlock Height="30" Foreground="Yellow" Name="textBlock3" Text="Weight" Width="83" />
+                        <TextBox Height="70" Name="we1" InputScope="Number" Text="" Width="98" />
+                    </StackPanel>
+                    <TextBlock FontSize="25" Foreground="Yellow" Margin="0,40,0,10" Name="ml" Text="ml" Width="62" Height="36" />
+                </StackPanel>
+                 </StackPanel>-->
+            <Button Content="Add ingredient" Height="72" Name="button1" Margin="5,402,0,64" HorizontalAlignment="Left" Width="435" Click="button1_Click" />
+            <Button Content="Add description" Height="72" Name="button2" Margin="5,460,15,6" Click="button2_Click" />
         </Grid>
     </Grid>
 
@@ -56,24 +65,9 @@
             <!--  <shell:ApplicationBarIconButton IconUri="/Icons/delete.png" Text="delete"/>
             <shell:ApplicationBarIconButton IconUri="/Icons/refresh.png" Text="refresh"/>-->
             <shell:ApplicationBar.MenuItems>
-                <!--<shell:ApplicationBarMenuItem Text="Choose my position" Click="chooseMyPosition_click"/>
-                <shell:ApplicationBarMenuItem Text="Locate Me" Click="locateMe_click"/>
-                <shell:ApplicationBarMenuItem Text="Set Pushpin" Click="setPin_click"/>
-                <shell:ApplicationBarMenuItem Text="Add Pushpin" Click="addPin_click"/>-->
+
             </shell:ApplicationBar.MenuItems>
         </shell:ApplicationBar>
     </phone:PhoneApplicationPage.ApplicationBar>
-
-    <!--Sample code showing usage of ApplicationBar-->
-    <!--<phone:PhoneApplicationPage.ApplicationBar>
-        <shell:ApplicationBar IsVisible="True" IsMenuEnabled="True">
-            <shell:ApplicationBarIconButton IconUri="/Images/appbar_button1.png" Text="Button 1"/>
-            <shell:ApplicationBarIconButton IconUri="/Images/appbar_button2.png" Text="Button 2"/>
-            <shell:ApplicationBar.MenuItems>
-                <shell:ApplicationBarMenuItem Text="MenuItem 1"/>
-                <shell:ApplicationBarMenuItem Text="MenuItem 2"/>
-            </shell:ApplicationBar.MenuItems>
-        </shell:ApplicationBar>
-    </phone:PhoneApplicationPage.ApplicationBar>-->
 
 </phone:PhoneApplicationPage>

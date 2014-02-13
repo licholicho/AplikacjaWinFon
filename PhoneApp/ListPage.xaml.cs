@@ -10,6 +10,7 @@ using System.Windows.Media;
 using System.Windows.Media.Animation;
 using System.Windows.Shapes;
 using Microsoft.Phone.Controls;
+using System.Windows.Media.Imaging;
 
 
 namespace PhoneApp
@@ -30,18 +31,23 @@ namespace PhoneApp
             ingredient2 = string.Empty;
             ingredient3 = string.Empty;
             InitializeComponent();
-            
+            System.Diagnostics.Debug.WriteLine("kons");
+        }
+
+        private void Find()
+        {
+
         }
 
         private void ShowEvents()
         {
             IList<Drink> drinkList = databaseClass.GetDrinksList();
-
+            System.Diagnostics.Debug.WriteLine("ShowDrinks " + drinkList.Count());
             //eventsListPerDay = TransformToEventsListPerDay(eventsList);
             IEnumerable<Drink> queryListDrinks = drinkList;//.OrderBy(evt => evt.DrinkName);
             eventsListPerDay = queryListDrinks.ToList();
 
-            //          String name = "woda";
+           
 
 
             //create panoramaItem and the ListBox
@@ -50,7 +56,9 @@ namespace PhoneApp
 
             List<PivotItem> Listpivotitem = new List<PivotItem>();
             Listpivotitem.Add(new PivotItem());
-            Listpivotitem[0].Header = "Drinks";
+            Listpivotitem[0].Header = "Drink List             ";
+            Listpivotitem[0].Margin = new Thickness(0, 50, 0, 100);
+          //  Listpivotitem[0].Foreground = new SolidColorBrush(Colors.Yellow);
 
             Listpivotitem[0].Content = Listlistbox[0];
             pivotControl.Items.Add(Listpivotitem[0]);
@@ -60,29 +68,36 @@ namespace PhoneApp
             for (int i = 0; i < eventsListPerDay.Count; i++)// Drink evnt in eventsListPerDay)
             {
                 //look for events of today from EventsList
+                Uri uri = new Uri("Images/appIcon.png", UriKind.Relative);
+                BitmapImage imgSource = new BitmapImage(uri);
+                ImageBrush imageBrush = new ImageBrush();
+                imageBrush.ImageSource = imgSource;
+
                 Drink evnt = eventsListPerDay[i];
-                System.Diagnostics.Debug.WriteLine("dlu: " + eventsListPerDay.Count + " " + evnt.DrinkName + " " + evnt.DrinkID);
                 TextBlock textBlockHour = new TextBlock();
                 textBlockHour.Text = evnt.DrinkName;
-                textBlockHour.Foreground = new SolidColorBrush(Colors.Magenta);
-                textBlockHour.FontSize = 20;
+                textBlockHour.Foreground = new SolidColorBrush(Colors.Yellow);
+                textBlockHour.FontSize = 25;
+                textBlockHour.Margin = new Thickness(0, 10, 0, 0);
 
                 TextBlock textBlockNameAndPlace = new TextBlock();
-                textBlockNameAndPlace.Text = evnt.DrinkIngredients;
+                textBlockNameAndPlace.Text = evnt.DrinkIngredients.Replace("$", ", ");
                 textBlockNameAndPlace.Foreground = new SolidColorBrush(Colors.White);
-                textBlockNameAndPlace.FontSize = 20;
+                textBlockNameAndPlace.FontSize = 22;
 
                 StackPanel stackPanel1 = new StackPanel();
-                stackPanel1.Width = 311;
+                stackPanel1.Width = 320;
                 stackPanel1.Children.Add(textBlockHour);
                 stackPanel1.Children.Add(textBlockNameAndPlace);
 
                 Button button = new Button();
-                button.Background = new SolidColorBrush(Colors.Orange);
+              //  button.Background = new SolidColorBrush(Colors.Yellow);
+                button.Background = imageBrush;
                 button.Height = 100;
-                button.Width = 90;
-                button.BorderThickness = new Thickness(0, 0, 0, 0);
-                button.Margin = new Thickness(0, 0, 9, 0);
+                button.Width = 100;
+                button.BorderThickness = new Thickness(3, 3, 3, 3);
+                button.BorderBrush = new SolidColorBrush(Colors.Yellow);
+                button.Margin = new Thickness(0, 0, 10, 0);
                 button.Name = eventsListPerDay[i].DrinkID.ToString();
                 button.Click += new RoutedEventHandler(button_Click);
 
@@ -99,11 +114,8 @@ namespace PhoneApp
                 }
                 else
                 {
-                    System.Diagnostics.Debug.WriteLine("skladnik1 " + ingredient1);
-                    System.Diagnostics.Debug.WriteLine("else");
                     if (!(String.IsNullOrEmpty(ingredient1)))
                     {
-                        System.Diagnostics.Debug.WriteLine("first if");
                         if (!(String.IsNullOrEmpty(ingredient2)))
                         {
                             if (!(String.IsNullOrEmpty(ingredient1)))
@@ -111,6 +123,7 @@ namespace PhoneApp
                                 if (evnt.DrinkIngredients.Contains(ingredient1) && evnt.DrinkIngredients.Contains(ingredient2) && evnt.DrinkIngredients.Contains(ingredient3))
                                 {
                                     Listlistbox[listboxindex].Items.Add(stackPanel2);
+                                    System.Diagnostics.Debug.WriteLine("dodaje 3");
                                 }
                             }
                             else
@@ -118,33 +131,23 @@ namespace PhoneApp
                                 if (evnt.DrinkIngredients.Contains(ingredient1) && evnt.DrinkIngredients.Contains(ingredient2))
                                 {
                                     Listlistbox[listboxindex].Items.Add(stackPanel2);
+                                    System.Diagnostics.Debug.WriteLine("dodaje 2");
                                 }
                             }
                         }
                         else
                         {
-                            System.Diagnostics.Debug.WriteLine("else do tego ifa");
+                           
                             if (evnt.DrinkIngredients.Contains(ingredient1))
                             {
                                 Listlistbox[listboxindex].Items.Add(stackPanel2);
+                                System.Diagnostics.Debug.WriteLine("dodaje 1");
                             }
                         }
 
                     }
                 }
-                    /*  else
-                  {
-                      listboxindex++;
-                      name = eventsListPerDay[i].DrinkName;
-                      i--;
-
-                      Listpivotitem.Add(new PivotItem());
-                      Listpivotitem[listboxindex].Header = "Drinksss";
-                      Listlistbox.Add(new ListBox());
-                      Listpivotitem[listboxindex].Content = Listlistbox[listboxindex];
-
-                      pivotControl.Items.Add(Listpivotitem[listboxindex]);
-                  }*/
+      
             }
         }
 
@@ -181,41 +184,7 @@ namespace PhoneApp
             }
         }
 
-        private void DeleteEvent_Click(object sender, EventArgs e)
-        {
-
-            if (selectedDrinkID == -1)//no item selected
-            {
-                MessageBox.Show("Select an Drink please !");
-            }
-            else
-            {
-                MessageBoxResult result = MessageBox.Show("Are you sure you want to delete this Drink ?",
-                                                            "Alert",
-                                                            MessageBoxButton.OKCancel);
-
-                if (result == MessageBoxResult.OK)
-                {
-
-                    if (databaseClass.DeleteDrink(selectedDrinkID))
-                    {
-                        MessageBox.Show("Drink deleted successfully!");
-                        Refresh_Click(null, null);
-                    }
-                    else
-                    {
-                        MessageBox.Show("There were an error when trying to delete!");
-                    }
-                }
-                else
-                {
-                    //when cancel, unselect the selected button
-                    Button btn = new Button();
-                    btn = (Button)FindName(selectedDrinkID.ToString());
-                    btn.Background = new SolidColorBrush(Colors.Red);
-                }
-            }
-        }
+      
 
         private void Refresh_Click(object sender, EventArgs e)
         {
@@ -234,31 +203,18 @@ namespace PhoneApp
         {
             ApplicationBar.Mode = Microsoft.Phone.Shell.ApplicationBarMode.Default;
             Button btn = (Button)sender;
-            btn.Background = new SolidColorBrush(Colors.Yellow);
+        //    btn.Background = new SolidColorBrush(Colors.Yellow);
             selectedDrinkID = int.Parse(btn.Name.ToString());
-            NavigationService.Navigate(new Uri("/DrinkPage.xaml?name="+eventsListPerDay[selectedDrinkID].DrinkName, UriKind.Relative));
+            //System.Diagnostics.Debug.WriteLine(selectedDrinkID + " " +eventsListPerDay[selectedDrinkID - 1].DrinkID + " " + eventsListPerDay[selectedDrinkID - 1].DrinkName);
+            Drink dr = databaseClass.GetDrinkByID(selectedDrinkID);
+            System.Diagnostics.Debug.WriteLine(dr.DrinkID + " " + dr.DrinkName);
+            NavigationService.Navigate(new Uri("/DrinkPage.xaml?name="+dr.DrinkName, UriKind.Relative));
         }
 
 
         protected override void OnNavigatedTo(System.Windows.Navigation.NavigationEventArgs e)
         {
-            base.OnNavigatedTo(e);
-            /*   if (e.Content is EditDrinkPage)
-               {
-                   //get the Drink with the specified ID
-                   Drink vnt = new Drink();
-                   foreach(Drink ev in eventsListPerDay)
-                   {
-                       if (ev.DrinkID == selectedDrinkID)
-                       {
-                           vnt = ev;
-                           break;
-                       }
-                   }
-
-                   //pass the Drink to the EditDrinkPage
-               TODO     (e.Content as EditDrinkPage).evntToEdit = vnt;
-               }*/
+            base.OnNavigatedTo(e);    
 
                string s = "";
 
@@ -274,17 +230,22 @@ namespace PhoneApp
                 {
                     ingredient3 = s;
                 }
-                //ingredient1 = NavigationContext.QueryString["ing1"];
+
                 System.Diagnostics.Debug.WriteLine("wywolalo sie!!!!!!!!!" + ingredient1);
-                ShowEvents();
-               // ingredient2 = NavigationContext.QueryString["ing2"];
-               // ingredient3 = NavigationContext.QueryString["ing3"];  
-       
-           /* else
-            {
-                System.Diagnostics.Debug.WriteLine("kupa");
-                ingredient1 = "_";
-            }*/
+
+
+                    ShowEvents();
+
+                    var lastPage = NavigationService.BackStack.FirstOrDefault();
+                    System.Diagnostics.Debug.WriteLine(lastPage.Source.ToString());
+      
+                if (lastPage != null && lastPage.Source.ToString() != "/MainPage.xaml")
+                {
+                    System.Diagnostics.Debug.WriteLine("wywolalasfasfgewf");
+                    NavigationService.RemoveBackEntry();
+                }
+                
+                
 
         }
     }

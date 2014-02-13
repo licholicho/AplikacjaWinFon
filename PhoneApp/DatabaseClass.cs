@@ -6,17 +6,16 @@ namespace PhoneApp
 {
     public class DatabaseClass
     {
-
         MyDataContext DrinksDB = new MyDataContext(@"isostore:/DrinksDB.sdf");
 
-        private static int LastEventIndex;
+        private static int LastDrinkIndex;
 
         public DatabaseClass()
         {
             if (CreateDatabase())
             {
-                MyDefinedDrinks definedevents = new MyDefinedDrinks();
-                FillDatabase(definedevents.ListDrinks);
+                MyDefinedDrinks definedDrinks = new MyDefinedDrinks();
+                FillDatabase(definedDrinks.ListDrinks);
             }
         }
 
@@ -33,14 +32,13 @@ namespace PhoneApp
             }
             else
             {
-                //Events Database already exists!!!
                 return false;
             }
         }
 
         public bool FillDatabase(List<Drink> ListDrinks)
         {
-            LastEventIndex = 0;
+            LastDrinkIndex = 0;
             try
             {
                 foreach (Drink drink in ListDrinks)
@@ -48,7 +46,7 @@ namespace PhoneApp
                     DrinksDB.Drinks.InsertOnSubmit(drink);
                    
                     DrinksDB.SubmitChanges();
-                    LastEventIndex++;
+                    LastDrinkIndex++;
                 }
                 return true;
             }
@@ -59,75 +57,38 @@ namespace PhoneApp
         {
             try
             {
-                // Fetching data from local database
                 IList<Drink> DrinksList = null;
                 {
-                    IQueryable<Drink> EmpQuery = from Evnt in DrinksDB.Drinks select Evnt;
+                    IQueryable<Drink> EmpQuery = (from Drin in DrinksDB.Drinks select Drin).OrderBy(e => e.DrinkName);
                     DrinksList = EmpQuery.ToList();
                 }
                 return DrinksList;
             }
             catch (Exception exc) { return null; }
         }
-/*
-        public IList<Ingredient> GetIngredientsList()
-        {
-            try
-            {
-                // Fetching data from local database
-                IList<Ingredient> IngredientsList = null;
-                {
-                    IQueryable<Ingredient> EmpQuery = from Evnt in DrinksDB.Ingredients select Evnt;
-                    IngredientsList = EmpQuery.ToList();
-                }
-                return IngredientsList;
-            }
-            catch (Exception exc) { return null; }
-        }
-        */
+
         public bool AddDrink(Drink drink)
         {
-
-            drink.DrinkID = LastEventIndex + 1; //give it the biggest ID
-
-            //evnt.EventID = EventsDB.Events.Last().EventID + 1; 
+            drink.DrinkID = LastDrinkIndex + 1; 
             try
             {
                 DrinksDB.Drinks.InsertOnSubmit(drink);
                 DrinksDB.SubmitChanges();
-                LastEventIndex++;
+                LastDrinkIndex++;
                 return true;
             }
             catch (Exception exc) { return false; }
         }
 
-       /* public bool AddIngredient(Ingredient i)
-        {
-
-            i.IngredientID = LastEventIndex + 1; //give it the biggest ID
-
-            //evnt.EventID = EventsDB.Events.Last().EventID + 1; 
-            try
-            {
-                DrinksDB.Drinks.InsertOnSubmit(drink);
-                DrinksDB.SubmitChanges();
-                LastEventIndex++;
-                return true;
-            }
-            catch (Exception exc) { return false; }
-        }
-        */
-        public bool EditDrink(Drink evnt)
+        public bool EditDrink(Drink drn)
         {
             try
             {
-                // Query for a specific Event
-                IQueryable<Drink> DrinkQuery = from ev in DrinksDB.Drinks where ev.DrinkID == evnt.DrinkID select ev;
-                //Drink evntEdit = EvntQuery.FirstOrDefault();
-                DrinkQuery.First().DrinkName = evnt.DrinkName;
-                DrinkQuery.First().DrinkIngredients = evnt.DrinkIngredients;
-                DrinkQuery.First().DrinkID = evnt.DrinkID;
-                DrinkQuery.First().DrinkDescription = evnt.DrinkDescription;
+                IQueryable<Drink> DrinkQuery = from dr in DrinksDB.Drinks where dr.DrinkID == drn.DrinkID select dr;
+                DrinkQuery.First().DrinkName = drn.DrinkName;
+                DrinkQuery.First().DrinkIngredients = drn.DrinkIngredients;
+                DrinkQuery.First().DrinkID = drn.DrinkID;
+                DrinkQuery.First().DrinkDescription = drn.DrinkDescription;
 
                 DrinksDB.SubmitChanges();
 
@@ -141,18 +102,31 @@ namespace PhoneApp
             try
             {
                 // Query for a specific Event
-                IQueryable<Drink> DrinkQuery = from ev in DrinksDB.Drinks where ev.DrinkName == name select ev;
+                IQueryable<Drink> DrinkQuery = from dr in DrinksDB.Drinks where dr.DrinkName == name select dr;
                 Drink Get = DrinkQuery.FirstOrDefault();
                 return Get;
             }
             catch (Exception exc) { return null; }
         }
 
+        public Drink GetDrinkByID(int id)
+        {
+            try
+            {
+                // Query for a specific Event
+                IQueryable<Drink> DrinkQuery = from dr in DrinksDB.Drinks where dr.DrinkID == id select dr;
+                Drink Get = DrinkQuery.FirstOrDefault();
+                return Get;
+            }
+            catch (Exception exc) { return null; }
+        }
+
+
         public bool DeleteDrink(int drinkId)
         {
             try
             {
-                IQueryable<Drink> DrinkQuery = from Evnt in DrinksDB.Drinks where Evnt.DrinkID == drinkId select Evnt;
+                IQueryable<Drink> DrinkQuery = from Drin in DrinksDB.Drinks where Drin.DrinkID == drinkId select Drin;
                 Drink DrinkRemove = DrinkQuery.FirstOrDefault();
                 DrinksDB.Drinks.DeleteOnSubmit(DrinkRemove);
                 DrinksDB.SubmitChanges();

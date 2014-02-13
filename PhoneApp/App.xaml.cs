@@ -33,6 +33,7 @@ namespace PhoneApp
 
             // Phone-specific initialization
             InitializePhoneApplication();
+          
         }
 
         // Code to execute when the application is launching (eg, from Start)
@@ -111,6 +112,7 @@ namespace PhoneApp
 
             // Remove this handler since it is no longer needed
             RootFrame.Navigated -= CompleteInitializePhoneApplication;
+            RootFrame.Background = App.Current.Resources["MainBackground"] as ImageBrush;
         }
 
         #endregion

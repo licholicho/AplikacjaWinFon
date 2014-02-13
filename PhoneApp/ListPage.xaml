@@ -14,10 +14,13 @@
     SupportedOrientations="Portrait"  Orientation="Portrait"
     shell:SystemTray.IsVisible="True">
 
+    
+
+    
     <!--LayoutRoot is the root grid where all page content is placed-->
     <Grid x:Name="LayoutRoot" Background="Transparent">
-
-        <controls:Pivot Title="My Drinks" Name="pivotControl">
+        <TextBlock x:Name="ApplicationTitle" Text="ALCO3"  Margin="20,0,0,0"  Foreground="Yellow" Style="{StaticResource PhoneTextNormalStyle}"/>
+        <controls:Pivot Title="" Name="pivotControl">
 
         </controls:Pivot>
     </Grid>
@@ -26,8 +29,6 @@
     <phone:PhoneApplicationPage.ApplicationBar>
         <shell:ApplicationBar IsVisible="True" IsMenuEnabled="True" Opacity="0.9" Mode="Minimized">
             <shell:ApplicationBarIconButton IconUri="/Images/add.png" Text="add" Click="AddEvent_Click"/>
-            <shell:ApplicationBarIconButton IconUri="/Images/edit.png" Text="edit" Click="EditEvent_Click"/>
-            <shell:ApplicationBarIconButton IconUri="/Images/delete.png" Text="delete" Click="DeleteEvent_Click"/>
             <shell:ApplicationBar.MenuItems>
                 <!--<shell:ApplicationBarMenuItem Text="Choose my position" Click="chooseMyPosition_click"/>
                 <shell:ApplicationBarMenuItem Text="Locate Me" Click="locateMe_click"/>
