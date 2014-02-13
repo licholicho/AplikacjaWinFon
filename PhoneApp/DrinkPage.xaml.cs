@@ -44,9 +44,7 @@ namespace PhoneApp
 
             List<PivotItem> Listpivotitem = new List<PivotItem>();
             Listpivotitem.Add(new PivotItem());
-          /*  TextBlock title = new TextBlock();
-            title.Text = _currentDrink.DrinkName;
-            title.Foreground = new SolidColorBrush(Colors.Orange);*/
+
             Listpivotitem[0].Header = _currentDrink.DrinkName;
 
             Listpivotitem[0].Content = listbox;
@@ -91,42 +89,42 @@ namespace PhoneApp
             tbTitle1.Text = "Description";
             tbTitle1.FontSize = 40;
             tbTitle1.Foreground = new SolidColorBrush(Colors.Yellow);
-            
+
             TextBlock tb1 = new TextBlock();
             tb1.Width = 420;
             tb1.Margin = new Thickness(10, 5, 20, 0);
             tb1.TextWrapping = TextWrapping.Wrap;
             if (String.IsNullOrEmpty(_currentDrink.DrinkDescription))
             {
-            _currentDrink.DrinkDescription = "...";
+                _currentDrink.DrinkDescription = "...";
             }
             tb1.Text = _currentDrink.DrinkDescription;
             listbox.Items.Add(tbTitle1);
             listbox.Items.Add(tb1);
-            
+
         }
 
         private void DeleteEvent_Click(object sender, EventArgs e)
         {
 
-                MessageBoxResult result = MessageBox.Show("Are you sure you want to delete this Drink ?",
-                                                            "Alert",
-                                                            MessageBoxButton.OKCancel);
+            MessageBoxResult result = MessageBox.Show("Are you sure you want to delete this Drink ?",
+                                                        "Alert",
+                                                        MessageBoxButton.OKCancel);
 
-                if (result == MessageBoxResult.OK)
+            if (result == MessageBoxResult.OK)
+            {
+                DatabaseClass databaseClass = new DatabaseClass();
+                if (databaseClass.DeleteDrink(_currentDrink.DrinkID))
                 {
-                    DatabaseClass databaseClass = new DatabaseClass();
-                    if (databaseClass.DeleteDrink(_currentDrink.DrinkID))
-                    {
-                        MessageBox.Show("Drink deleted successfully!");
-                        NavigationService.Navigate(new Uri("/ListPage.xaml?ing1=" + "_", UriKind.Relative));
-                    }
-                    else
-                    {
-                        MessageBox.Show("There were an error when trying to delete!");
-                    }
+                    MessageBox.Show("Drink deleted successfully!");
+                    NavigationService.Navigate(new Uri("/ListPage.xaml?ing1=" + "_", UriKind.Relative));
                 }
-               
+                else
+                {
+                    MessageBox.Show("There were an error when trying to delete!");
+                }
+            }
+
         }
 
         public string DisplayIngredients { get; set; }

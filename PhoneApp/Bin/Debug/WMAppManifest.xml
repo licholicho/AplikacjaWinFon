@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 
 <Deployment xmlns="http://schemas.microsoft.com/windowsphone/2009/deployment" AppPlatformVersion="7.1">
-  <App xmlns="" ProductID="{1a2fe545-f918-4b1b-a568-70e991085edf}" Title="PhoneApp" RuntimeType="Silverlight" Version="1.0.0.0" Genre="apps.normal"  Author="PhoneApp author" Description="Sample description" Publisher="PhoneApp">
+  <App xmlns="" ProductID="{1a2fe545-f918-4b1b-a568-70e991085edf}" Title="ALCO3" RuntimeType="Silverlight" Version="1.0.0.0" Genre="apps.normal"  Author="ALCO3 authors" Description="Mix ALCO3 drinks" Publisher="kasurka">
     <IconPath IsRelative="true" IsResource="false">ApplicationIcon.png</IconPath>
     <Capabilities>
       <Capability Name="ID_CAP_GAMERSERVICES"/>

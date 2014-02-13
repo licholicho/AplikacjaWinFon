@@ -70,7 +70,7 @@ namespace PhoneApp
             ListDrinks.Add(new Drink
       {
           DrinkID = id++,
-          DrinkName = "Evil Mandarin",
+          DrinkName = "",
           DrinkIngredients = "mandarin juice$lemon soda$raspberry syrup",
           IngredientsWeight = "100$75$15",
           DrinkDescription = "Add to an ice filled wine goblet."
@@ -78,7 +78,7 @@ namespace PhoneApp
             ListDrinks.Add(new Drink
       {
           DrinkID = id++,
-          DrinkName = "Bloody night",
+          DrinkName = "Mock Daisy Crusta",
           DrinkIngredients = "lime juice$sugar syrup$raspberry syrup$grenadine syrup$soda water",
           IngredientsWeight = "40$25$15$7$75",
           DrinkDescription = "Rim a wine glass with lime/caster sugar, add a spiral of lime, and fill with crushed ice. Stir lime juice and syrups together, and strain into the glass. Add the soda and sprinkle the grenadine on top."
@@ -87,7 +87,7 @@ namespace PhoneApp
             ListDrinks.Add(new Drink
   {
       DrinkID = id++,
-      DrinkName = "Nyan~~",
+      DrinkName = "Cat Foot",
       DrinkIngredients = "grenadine syrup$pineapple juice$orange juice$grapefruit juice",
       IngredientsWeight = "10$40$40$40",
       DrinkDescription = "Shake or blend briefly, and strain into a highball glass. Decorate with fresh fruit and a cherry. Add a straw, and serve."
@@ -96,7 +96,7 @@ namespace PhoneApp
             ListDrinks.Add(new Drink
   {
       DrinkID = id++,
-      DrinkName = "Hephaestus",
+      DrinkName = "Rosemary",
       DrinkIngredients = "strawberry puree$guava juice$pineapple juice$lime juice$strawberry syrup$lemonade",
       IngredientsWeight = "75$25$25$7$15$50",
       DrinkDescription = "Shake all ingredients (except lemonade) and strain into a highball glass three-quarters filled with crushed ice. Add lemonade, decorate with a slice of lime and a strawberry, add straws and serve."
@@ -104,7 +104,7 @@ namespace PhoneApp
             ListDrinks.Add(new Drink
             {
                 DrinkID = id++,
-                DrinkName = "Persephone",
+                DrinkName = "Pomola",
                 DrinkIngredients = "lime juice$chilled cola$grenadine syrup",
                 IngredientsWeight = "25$125$7",
                 DrinkDescription = "Pour into an ice-filled highball glass. Decorate with a slice of lime."
@@ -113,7 +113,7 @@ namespace PhoneApp
             ListDrinks.Add(new Drink
             {
                 DrinkID = id++,
-                DrinkName = "Wings of wisdom",
+                DrinkName = "Queen Charlie",
                 DrinkIngredients = "grenadine syrup$soda water$lemonade",
                 IngredientsWeight = "15$75$75",
                 DrinkDescription = "Pour into an ice-filled highball glass. Decorate with fruit, and serve with a straw."
@@ -121,7 +121,7 @@ namespace PhoneApp
             ListDrinks.Add(new Drink
             {
                 DrinkID = id++,
-                DrinkName = "Wolfdire",
+                DrinkName = "Kiddie Cocktail",
                 DrinkIngredients = "lemon soda$grenadine syrup",
                 IngredientsWeight = "200$30",
                 DrinkDescription = "Build in a highball glass. Add 7-up or sprite over ice and sprinkle grenadine syrup over it. Decorate with a lemon slice and a cherry."
@@ -129,7 +129,7 @@ namespace PhoneApp
             ListDrinks.Add(new Drink
             {
                 DrinkID = id++,
-                DrinkName = "Little Baby",
+                DrinkName = "Babylove",
                 DrinkIngredients = "coconut milk$cream$pineapple juice$banana syrup",
                 IngredientsWeight = "40$20$50$20",
                 DrinkDescription = "Shake well over crushed ice in a shaker. Strain into a collins glass and fill with crushed ice."
@@ -209,7 +209,7 @@ namespace PhoneApp
                 ListDrinks.Add(new Drink
             {
                 DrinkID = id++,
-                DrinkName = "Beautiful Sunset",
+                DrinkName = "Sunset",
                 DrinkIngredients = "cream$banana juice$grenadine syrup",
                 IngredientsWeight = "100$100$15",
                 DrinkDescription = "Mix ingredients in a shaker with ice cubes and pour into a glass."

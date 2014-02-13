@@ -30,7 +30,7 @@ namespace PhoneApp
             List<PivotItem> Listpivotitem = new List<PivotItem>();
             Listpivotitem.Add(new PivotItem());
             namae = new TextBox();
-            
+
             StackPanel sp = AddName();
             //sp.Children.Add(new TextBox());
             Listpivotitem[0].Header = sp;
@@ -67,7 +67,7 @@ namespace PhoneApp
             volTitle.Width = 83;
             volTitle.Text = "Volume";
             TextBox vol = new TextBox();
-            vol.Name = "vol";
+            vol.Name = "weig";
             vol.Height = 70;
             vol.Width = 98;
             InputScope scope = new InputScope();
@@ -127,7 +127,7 @@ namespace PhoneApp
 
             namae.Height = 70;
             namae.Width = 440;
-            
+
             namae.Margin = new Thickness(-10, 0, 0, 0);
             ingredient.Children.Add(namae);
 
@@ -173,19 +173,18 @@ namespace PhoneApp
                             {
 
                                 tmp = (TextBox)child2;
-                                //  System.Diagnostics.Debug.WriteLine(":> "+ tmp.Name);
+
                                 if (tmp.Name.Equals("ingr"))
                                 {
                                     ingr1 = tmp;
-                                    //      System.Diagnostics.Debug.WriteLine("!!!");
+
                                 }
                                 if (tmp.Name.Equals("weig"))
                                 {
                                     weig1 = tmp;
-                                    //      System.Diagnostics.Debug.WriteLine("!!!");
+
                                 }
                             }
-                            //   System.Diagnostics.Debug.WriteLine(child2.GetType().ToString());
                         }
 
                     }
@@ -196,9 +195,9 @@ namespace PhoneApp
 
                 if (!(ingr1 == null) && !(weig1 == null))
                 {
+
                     string ingrT = ingr1.Text.Replace("$", " ");
                     string weigT = weig1.Text.Replace("$", " ");
-                    
                     if (!(String.IsNullOrWhiteSpace(ingrT)) && !(String.IsNullOrWhiteSpace(weigT)))
                     {
                         ingredients += ingrT + "$";
@@ -211,7 +210,7 @@ namespace PhoneApp
             if (!((String.IsNullOrWhiteSpace(name)) || (String.IsNullOrWhiteSpace(ingredients)) || (String.IsNullOrWhiteSpace(weights))))
             {
                 add.DrinkName = name;
-                add.DrinkIngredients = ingredients.Substring(0,ingredients.Length-1);
+                add.DrinkIngredients = ingredients.Substring(0, ingredients.Length - 1);
                 add.IngredientsWeight = weights.Substring(0, weights.Length - 1); ;
 
                 string descr = desc.Text;
@@ -221,11 +220,8 @@ namespace PhoneApp
                     add.DrinkDescription = descr;
                 }
 
-                System.Diagnostics.Debug.WriteLine(add.DrinkName + " " + add.DrinkIngredients + " " + add.IngredientsWeight);
-
                 DatabaseClass databaseClass = new DatabaseClass();
                 databaseClass.AddDrink(add);
-                //   System.Diagnostics.Debug.WriteLine("ADD " + add.DrinkName
                 NavigationService.Navigate(new Uri("/ListPage.xaml?ing1=" + "_", UriKind.Relative));
             }
             else
@@ -239,7 +235,6 @@ namespace PhoneApp
         private void button1_Click(object sender, RoutedEventArgs e)
         {
 
-            System.Diagnostics.Debug.WriteLine(listbox.Items.Count());
             if (button2.IsEnabled)
             {
                 listbox.Items.Add(AddIngredient());

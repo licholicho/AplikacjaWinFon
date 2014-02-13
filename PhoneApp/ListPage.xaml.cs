@@ -20,7 +20,7 @@ namespace PhoneApp
         DatabaseClass databaseClass = new DatabaseClass();
         int selectedDrinkID = -1;
         List<Drink> eventsListPerDay;
-        string ingredient1; 
+        string ingredient1;
         string ingredient2;
         string ingredient3;
 
@@ -31,7 +31,6 @@ namespace PhoneApp
             ingredient2 = string.Empty;
             ingredient3 = string.Empty;
             InitializeComponent();
-            System.Diagnostics.Debug.WriteLine("kons");
         }
 
         private void Find()
@@ -42,12 +41,11 @@ namespace PhoneApp
         private void ShowEvents()
         {
             IList<Drink> drinkList = databaseClass.GetDrinksList();
-            System.Diagnostics.Debug.WriteLine("ShowDrinks " + drinkList.Count());
             //eventsListPerDay = TransformToEventsListPerDay(eventsList);
             IEnumerable<Drink> queryListDrinks = drinkList;//.OrderBy(evt => evt.DrinkName);
             eventsListPerDay = queryListDrinks.ToList();
 
-           
+
 
 
             //create panoramaItem and the ListBox
@@ -58,7 +56,7 @@ namespace PhoneApp
             Listpivotitem.Add(new PivotItem());
             Listpivotitem[0].Header = "Drink List             ";
             Listpivotitem[0].Margin = new Thickness(0, 50, 0, 100);
-          //  Listpivotitem[0].Foreground = new SolidColorBrush(Colors.Yellow);
+            //  Listpivotitem[0].Foreground = new SolidColorBrush(Colors.Yellow);
 
             Listpivotitem[0].Content = Listlistbox[0];
             pivotControl.Items.Add(Listpivotitem[0]);
@@ -91,7 +89,7 @@ namespace PhoneApp
                 stackPanel1.Children.Add(textBlockNameAndPlace);
 
                 Button button = new Button();
-              //  button.Background = new SolidColorBrush(Colors.Yellow);
+                //  button.Background = new SolidColorBrush(Colors.Yellow);
                 button.Background = imageBrush;
                 button.Height = 100;
                 button.Width = 100;
@@ -106,7 +104,7 @@ namespace PhoneApp
                 stackPanel2.Children.Add(button);
                 stackPanel2.Children.Add(stackPanel1);
 
-               
+
 
                 if (ingredient1.Equals("_"))
                 {
@@ -123,7 +121,6 @@ namespace PhoneApp
                                 if (evnt.DrinkIngredients.Contains(ingredient1) && evnt.DrinkIngredients.Contains(ingredient2) && evnt.DrinkIngredients.Contains(ingredient3))
                                 {
                                     Listlistbox[listboxindex].Items.Add(stackPanel2);
-                                    System.Diagnostics.Debug.WriteLine("dodaje 3");
                                 }
                             }
                             else
@@ -131,23 +128,21 @@ namespace PhoneApp
                                 if (evnt.DrinkIngredients.Contains(ingredient1) && evnt.DrinkIngredients.Contains(ingredient2))
                                 {
                                     Listlistbox[listboxindex].Items.Add(stackPanel2);
-                                    System.Diagnostics.Debug.WriteLine("dodaje 2");
                                 }
                             }
                         }
                         else
                         {
-                           
+
                             if (evnt.DrinkIngredients.Contains(ingredient1))
                             {
                                 Listlistbox[listboxindex].Items.Add(stackPanel2);
-                                System.Diagnostics.Debug.WriteLine("dodaje 1");
                             }
                         }
 
                     }
                 }
-      
+
             }
         }
 
@@ -184,7 +179,7 @@ namespace PhoneApp
             }
         }
 
-      
+
 
         private void Refresh_Click(object sender, EventArgs e)
         {
@@ -203,49 +198,43 @@ namespace PhoneApp
         {
             ApplicationBar.Mode = Microsoft.Phone.Shell.ApplicationBarMode.Default;
             Button btn = (Button)sender;
-        //    btn.Background = new SolidColorBrush(Colors.Yellow);
+            //    btn.Background = new SolidColorBrush(Colors.Yellow);
             selectedDrinkID = int.Parse(btn.Name.ToString());
-            //System.Diagnostics.Debug.WriteLine(selectedDrinkID + " " +eventsListPerDay[selectedDrinkID - 1].DrinkID + " " + eventsListPerDay[selectedDrinkID - 1].DrinkName);
             Drink dr = databaseClass.GetDrinkByID(selectedDrinkID);
-            System.Diagnostics.Debug.WriteLine(dr.DrinkID + " " + dr.DrinkName);
-            NavigationService.Navigate(new Uri("/DrinkPage.xaml?name="+dr.DrinkName, UriKind.Relative));
+            NavigationService.Navigate(new Uri("/DrinkPage.xaml?name=" + dr.DrinkName, UriKind.Relative));
         }
 
 
         protected override void OnNavigatedTo(System.Windows.Navigation.NavigationEventArgs e)
         {
-            base.OnNavigatedTo(e);    
+            base.OnNavigatedTo(e);
 
-               string s = "";
+            string s = "";
 
-                if (NavigationContext.QueryString.TryGetValue("ing1", out s))
-                {      
-                    ingredient1 = s;    
-                }
-                if (NavigationContext.QueryString.TryGetValue("ing2", out s))
-                {
-                    ingredient2 = s;
-                }
-                if (NavigationContext.QueryString.TryGetValue("ing3", out s))
-                {
-                    ingredient3 = s;
-                }
-
-                System.Diagnostics.Debug.WriteLine("wywolalo sie!!!!!!!!!" + ingredient1);
+            if (NavigationContext.QueryString.TryGetValue("ing1", out s))
+            {
+                ingredient1 = s;
+            }
+            if (NavigationContext.QueryString.TryGetValue("ing2", out s))
+            {
+                ingredient2 = s;
+            }
+            if (NavigationContext.QueryString.TryGetValue("ing3", out s))
+            {
+                ingredient3 = s;
+            }
 
 
-                    ShowEvents();
+            ShowEvents();
 
-                    var lastPage = NavigationService.BackStack.FirstOrDefault();
-                    System.Diagnostics.Debug.WriteLine(lastPage.Source.ToString());
-      
-                if (lastPage != null && lastPage.Source.ToString() != "/MainPage.xaml")
-                {
-                    System.Diagnostics.Debug.WriteLine("wywolalasfasfgewf");
-                    NavigationService.RemoveBackEntry();
-                }
-                
-                
+            var lastPage = NavigationService.BackStack.FirstOrDefault();
+
+            if (lastPage != null && lastPage.Source.ToString() != "/MainPage.xaml")
+            {
+                NavigationService.RemoveBackEntry();
+            }
+
+
 
         }
     }

@@ -36,10 +36,9 @@ namespace PhoneApp
         {
             this.Dispatcher.BeginInvoke(() =>
             {
-                //System.Diagnostics.Debug.WriteLine(textBox1.Text + " " + textBox2.Text);
                 NavigationService.Navigate(new Uri("/ListPage.xaml?ing1=" + textBox1.Text
-                                                                + "&ing2=" + textBox2.Text
-                                                                + "&ing3=" + textBox3.Text, UriKind.Relative));
+                                                              + "&ing2=" + textBox2.Text
+                                                              + "&ing3=" + textBox3.Text, UriKind.Relative));
             });
 
         }
